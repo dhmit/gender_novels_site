@@ -1,4 +1,6 @@
-# Web-Based Data Acquisition
+# Notes
+
+## Web-Based Data Acquisition
 
 At the start of the project, there was a challenge to come up with the most effective way to get an 
 adequate corpus of books for analysis. Towards the beginning, this meant arriving at 100 books as

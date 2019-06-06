@@ -1,3 +1,5 @@
+# Visualizations
+
 ## Countries of Publication
 
 ![](images/country_of_publication.png "Countries of Publication")

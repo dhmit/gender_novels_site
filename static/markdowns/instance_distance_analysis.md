@@ -39,7 +39,7 @@ p-value = 0.0184
 
 All dates before 1810 : 12.36
 
-Dates 1810 to 1819 : 13.833
+Dates 1810 to 1819 : 13.83
 
 Dates 1820 to 1829 : 15.22
 
