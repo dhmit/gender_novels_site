@@ -2,7 +2,7 @@
 import os
 
 # 3rd party imports
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 import markdown2
 
 
@@ -46,7 +46,7 @@ def render_markdown_any(filename, title=None):
         with open(file_path, encoding='utf-8') as fh:
             md_in = fh.read()
     except FileNotFoundError:
-        md_in = f'There is no Markdown file named {filename}'
+        abort(404)
 
     md_in = md_in.replace('(images/', '(/static/markdowns/images/')
     markdown_html = markdown2.markdown(md_in)

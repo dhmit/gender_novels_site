@@ -134,3 +134,6 @@ gender_novels/corpora/gutenberg/texts
 
 # Weird temp files
 *~*
+
+# vim
+*.swp
