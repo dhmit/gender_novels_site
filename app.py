@@ -1,0 +1,73 @@
+# python imports
+import os
+
+# 3rd party imports
+from flask import Flask, render_template
+import markdown2
+
+
+app = Flask(__name__)
+app.config['ENV'] = 'development'
+app.config['DEBUG'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+
+# These function calls render the individual pages of the overall website so that the
+# landing page is able to link to them through the navbar
+
+@app.route('/')
+def render_overview():
+    return render_markdown_any('gender_novels_overview', title='Gender in Novels, 1770–1922')
+
+
+# Still necessary because team.html is partly static HTML and partly converted markdown HTML
+@app.route('/info/team.html')
+def render_team():
+    return render_template('team.html')
+
+
+# Still necessary because corpus-notes.html is composed of 2 separate MD files
+@app.route('/info/corpus-notes.html')
+def render_corpus_notes():
+    return render_template('corpus-notes.html')
+
+
+@app.route('/info/statistics.html')
+def render_statistics():
+    return render_template('statistics.html')
+
+
+@app.route('/info/<filename>')
+def render_markdown_any(filename, title=None):
+
+    file_path = os.path.join('static', 'markdowns', f'{filename}.md')
+
+    try:
+        with open(file_path, encoding='utf-8') as fh:
+            md_in = fh.read()
+    except FileNotFoundError:
+        md_in = f'There is no Markdown file named {filename}'
+
+    md_in = md_in.replace('(images/', '(/static/markdowns/images/')
+    markdown_html = markdown2.markdown(md_in)
+    if title is None:
+        title_parts = filename.split('_')
+        title = ' '.join([title_word.capitalize() for title_word in title_parts])
+        # Gender in Novels, 1770-1922 is the desired title and this automatic naming
+        # system would override that
+        if title == "Gender Novels Overview":
+            title = "Gender in Novels, 1770–1922"
+
+    return render_template('blank_markdown.html', title=title, markdown_html=markdown_html)
+
+
+@app.route('/markdowns/<filename>/')
+def render_no_slash(filename, title=None):
+    return render_markdown_any(filename, title)
+
+
+if __name__ == '__main__':
+    # Open a web browser on the landing page
+    import webbrowser
+    webbrowser.open('http://127.0.0.1:8021/', new=1)
+    app.run(host='127.0.0.1', port='8021')
