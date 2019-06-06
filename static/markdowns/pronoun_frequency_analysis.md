@@ -9,8 +9,8 @@ pronouns in a given novel are female for each novel in the Gutenberg corpus. The
 #### Overall
 Below shows the average portion of the total number of pronouns in a given novel that are of each type 
 
-- Female: 0.33
-- Male: 0.67
+- Female: 0.325
+- Male: 0.675
 
 On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns. This 
 result has not been tested for statistical significance.

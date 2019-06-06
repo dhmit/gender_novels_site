@@ -6,7 +6,8 @@ The raw analysis returns a dictionary with each novel mapped to an array of 3 li
 
 * Median, mean, minimum, and maximum distances between male pronoun instances.
 * Median, mean, minimum, and maximum distances between female pronoun instances.
-* For each of the above stats, the difference between male and female values (male stat- female stat for all stats).
+* For each of the above stats, the difference between male and female values (male stat – female 
+stat for all stats).
 *Positive difference values* mean there is a *larger distance between male pronouns than female pronouns* and therefore
 *higher female frequency*.
 

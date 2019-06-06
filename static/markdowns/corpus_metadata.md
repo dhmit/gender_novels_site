@@ -51,7 +51,7 @@ Unfortunately, Project Gutenberg doesn't provide important metadata like the pub
 
 ### Wikidata
 
-Each page on Wikidata has a unique ID, and each "claim" on that page--- a property of the object that the ID refers too--- has an ID as well.  For example, `P2067` is the claim ID for mass.  `P2067` for page `Q402` is `125,260,000,000±210,000,000 electronvolt`, and `P2067` for page `Q22686` is `120 kilogram`.  (The former is the [Higgs boson](https://www.wikidata.org/wiki/Q402), the latter is [the US president](https://www.wikidata.org/wiki/Q22686)).  Using the [pywikibot](https://github.com/wikimedia/pywikibot) module, and a known claim ID, one can fairly simply access the information for a page.  
+Each page on Wikidata has a unique ID, and each "claim" on that page—a property of the object that the ID refers to—has an ID as well.  For example, `P2067` is the claim ID for mass.  `P2067` for page `Q402` is `125,260,000,000±210,000,000 electronvolt`, and `P2067` for page `Q22686` is `120 kilogram`.  (The former is the [Higgs boson](https://www.wikidata.org/wiki/Q402), the latter is [the US president](https://www.wikidata.org/wiki/Q22686)).  Using the [pywikibot](https://github.com/wikimedia/pywikibot) module, and a known claim ID, one can fairly simply access the information for a page.  
      
     site = pywikibot.Site("en", "wikipedia")
     page = pywikibot.Page(site, title)

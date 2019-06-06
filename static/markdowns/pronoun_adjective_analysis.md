@@ -16,7 +16,7 @@ technically associated with both gender pronouns in that case).
 ## Top 20 Adjectives Associated with Each Gender
 **These were obtained by calculating the difference between adjective associations with male pronouns, and with female 
 pronouns:** 
-> number of male pronoun associations - number of female pronoun associations = difference value
+> number of male pronoun associations – number of female pronoun associations = difference value
 
 Adjectives with the highest positive difference values demonstrate the strongest male pronoun association, and adjectives 
 with the highest negative difference values demonstrate the strongest female pronoun association.
