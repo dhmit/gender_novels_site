@@ -24,22 +24,23 @@ def render_overview():
 def render_team():
     return render_template('team.html')
 
-@app.route('/info/adjective_analysis')
+
+@app.route('/info/pronoun_adjective_analysis')
 def render_adjective():
-    female_adjectives = [('Beautiful',-6606),('Pretty',-4348),('Sweet',-4119),('Lady',-3058),
-                         ('Lovely',-2205),('Dear',-1926),('Soft',-1922),('Happy',-1527),('Queen',
-                                                                                         -1198),
-                         ('Girlish',-1027),('Delicate',-987),('Graceful',-945),('Bright',-932),
-                         ('Rosy',-771),('Alone',-755),('Pale',-697),('Down',-665),('Childish',
-                                                                                   -657),('Slim',
-                                                                                          -645)]
-    male_adjectives = [('Old',53565),('Good',48647),('Last',48647),('Great',40234),('First',
+    female_adjectives = [('Beautiful', -6606), ('Pretty', -4348), ('Sweet', -4119), ('Lady', -3058),
+                         ('Lovely', -2205), ('Dear', -1926), ('Soft', -1922), ('Happy', -1527),
+                         ('Queen', -1198), ('Girlish', -1027), ('Delicate', -987), ('Graceful',
+                                                                                    -945),
+                         ('Bright', -932), ('Rosy', -771), ('Alone', -755), ('Pale', -697),
+                         ('Down', -665), ('Childish', -657), ('Slim', -645)]
+    male_adjectives = [('Old', 53565), ('Good', 48647), ('Last', 48647), ('Great', 40234), ('First',
                                                                                     28948),
-                       ('Young',26771),('Little',25935),('More',25071),('Few',20510),('Much',
+                       ('Young', 26771), ('Little', 25935), ('More', 25071), ('Few', 20510),('Much',
                                                                                       19362),
-                       ('Many',19283),('New',18025),('Long',17929),('Big',17520),('Right',15763),
-                       ('Best',14032),('Dead',12470),('Certain',11966),('Better',11782),('Sure',
-                                                                                         11643)]
+                       ('Many', 19283), ('New', 18025), ('Long', 17929), ('Big', 17520), ('Right',
+                                                                                      15763),
+                       ('Best', 14032), ('Dead', 12470), ('Certain', 11966), ('Better', 11782),
+                       ('Sure', 11643)]
     return render_template('adjective_analysis.html',
                            female_adjectives=female_adjectives, male_adjectives=male_adjectives)
 
