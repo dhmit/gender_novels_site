@@ -9,8 +9,8 @@ pronouns in a given novel are female for each novel in the Gutenberg corpus. The
 #### Overall
 Below shows the average portion of the total number of pronouns in a given novel that are of each type 
 
-- Female: 0.332
-- Male: 0.668
+- Female: 0.325
+- Male: 0.675
 
 On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns. This 
 result has not been tested for statistical significance.
@@ -18,28 +18,28 @@ result has not been tested for statistical significance.
 #### By Author Gender
 Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender
 
-- Male author: 0.246
-- Female author: 0.528
+- Male author: 0.25
+- Female author: 0.53
 
 On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel by a female author contains 52.8% female pronouns. This difference has been shown to be statistically significant at the p = 0.05 level by an independent t test.
 
 #### By Date
-- To 1810: 0.348
-- 1810 to 1819: 0.367
-- 1820 to 1829: 0.225
-- 1830 to 1839: 0.225
-- 1840 to 1849: 0.284
-- 1850 to 1859: 0.346
-- 1860 to 1869: 0.379
-- 1870 to 1879: 0.403
-- 1880 to 1889: 0.351
+- To 1810: 0.35
+- 1810 to 1819: 0.37
+- 1820 to 1829: 0.23
+- 1830 to 1839: 0.23
+- 1840 to 1849: 0.28
+- 1850 to 1859: 0.35
+- 1860 to 1869: 0.38
+- 1870 to 1879: 0.40
+- 1880 to 1889: 0.35
 - 1890 to 1899: `NaN`
-- 1900 on: 0.331
+- 1900 on: 0.33
 
 #### By Publication Location
-- United Kingdom: 0.330
-- United States: 0.340
-- Other: 0.331
+- United Kingdom: 0.33
+- United States: 0.34
+- Other: 0.33
 
 No patterns or significant difference was found between categories for publication date or publication location.
 
@@ -51,8 +51,8 @@ total number of subject pronouns in a given novel that are female for each novel
 #### Overall
 Below shows the average portion of the total number of subject pronouns in a given novel that are of each type 
 
-- Female: 0.325
-- Male: 0.675
+- Female: 0.33
+- Male: 0.68
 
 On average, a novel in corpus contains 32.5% female pronouns and 67.5% male pronouns. This result has not been tested for statistical significance.
 
@@ -61,30 +61,30 @@ This result was then compared with the overall results for Analysis #1. No signi
 #### By Author Gender
 Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender
 
-- Male author: 0.240
-- Female author: 0.520
+- Male author: 0.24
+- Female author: 0.52
 
 On average, a novel by a male author in the corpus contains 24.0% female pronouns and a novel by a female author contains 52.0% female pronouns. This difference was shown to be statistically significant at the p = 0.05 level with an independent t test.
 
 The results for female authors and male authors were compared with the results in Analysis #1. No significant difference was found at the p = 0.05 level. This implies that female and male authors do not use gendered pronouns any more or less frequently in the subject than they do overall.
 
 #### By Date
-- To 1810: 0.338
-- 1810 to 1819: 0.366
-- 1820 to 1829: 0.217
-- 1830 to 1839: 0.213
-- 1840 to 1849: 0.275
-- 1850 to 1859: 0.340
-- 1860 to 1869: 0.367
-- 1870 to 1879: 0.396
-- 1880 to 1889: 0.341
+- To 1810: 0.34
+- 1810 to 1819: 0.37
+- 1820 to 1829: 0.22
+- 1830 to 1839: 0.21
+- 1840 to 1849: 0.28
+- 1850 to 1859: 0.34
+- 1860 to 1869: 0.37
+- 1870 to 1879: 0.40
+- 1880 to 1889: 0.34
 - 1890 to 1899: `NaN`
-- 1900 on: 0.324
+- 1900 on: 0.32
 
 #### By Publication Location
-- United Kingdom: 0.325
-- United States: 0.334
-- Other: 0.324
+- United Kingdom: 0.33
+- United States: 0.33
+- Other: 0.32
 
 As in Analysis #1, no patterns or significant differences were found for date of publication or publication location.
 
@@ -98,8 +98,8 @@ This analysis is separated into two parts, 3a and 3b. 3a is the analysis of fema
 #### Overall
 Below are the average proportion of the pronouns of the given gender that are subject pronouns.
 
-- Male: 0.744
-- Female: 0.470
+- Male: 0.74
+- Female: 0.47
 
 On average, for a given novel in the corpus, about 74% of the male pronouns are subject pronouns and about 47% of the female pronouns are subject pronouns. This difference was shown to be statistically significant at the p = 0.05 level.
 
@@ -108,30 +108,30 @@ The following are the average proportions of female pronouns in a given novel th
 
 #### By Author Gender
 
-- Male: 0.464
-- Female: 0.483
+- Male: 0.46
+- Female: 0.48
 
 No significant difference at the p = 0.05 level was found for these categories.
 
 #### By Publication Date
 
-- Before 1810: 0.406
-- 1810 to 1819: 0.398
-- 1820 to 1829: 0.367
-- 1830 to 1839: 0.387
-- 1840 to 1849:  0.413
-- 1850 to 1859: 0.431
-- 1860 to 1869: 0.429
-- 1870 to 1879: 0.454
-- 1880 to 1889: 0.460
+- Before 1810: 0.41
+- 1810 to 1819: 0.40
+- 1820 to 1829: 0.37
+- 1830 to 1839: 0.39
+- 1840 to 1849:  0.41
+- 1850 to 1859: 0.43
+- 1860 to 1869: 0.43
+- 1870 to 1879: 0.45
+- 1880 to 1889: 0.46
 - 1890 to 1899: `NaN`
-- 1900 to 1922: 0.477
+- 1900 to 1922: 0.48
 
 #### By Publication Location
 
-- United Kingdom 0.463
-- United States: 0.470
-- Other: 0.471
+- United Kingdom 0.46
+- United States: 0.47
+- Other: 0.47
 
 No patterns or significant differences were found for any of the above categories.
 
@@ -139,28 +139,28 @@ No patterns or significant differences were found for any of the above categorie
 The following are the average proportions of male pronouns in a given novel that are subject pronouns.
 
 #### Author Gender
-- Male: 0.748
-- Female: 0.734
+- Male: 0.75
+- Female: 0.73
  
 #### By Publication Date
  
-- Before 1810: 0.714
-- 1810 to 1819: 0.692
-- 1820 to 1829: 0.721
-- 1830 to 1839: 0.728
-- 1840 to 1849: 0.702
-- 1850 to 1859: 0.714
-- 1860 to 1869: 0.708
-- 1870 to 1879: 0.722
-- 1880 to 1889: 0.732
+- Before 1810: 0.71
+- 1810 to 1819: 0.70
+- 1820 to 1829: 0.72
+- 1830 to 1839: 0.73
+- 1840 to 1849: 0.70
+- 1850 to 1859: 0.71
+- 1860 to 1869: 0.71
+- 1870 to 1879: 0.72
+- 1880 to 1889: 0.73
 - 1890 to 1899: `NaN`
-- 1900 to 1922': 0.749
+- 1900 to 1922': 0.75
  
 #### By Publication Location
  
-- United Kingdom 0.725
-- United States: 0.743
-- Neither: 0.746
+- United Kingdom 0.73
+- United States: 0.74
+- Neither: 0.75
 
 No patterns or significant differences were found for any of these categories.
 

@@ -1,6 +1,7 @@
 # Deployment Visualization
 
 Research and development in visualization as connected to deployment for this project was concentrated in three main areas, which were:
+
 - General principles for visualizations, particularly in connection to website design
 - Specific visual choices for the gender novels project
 - How to fulfill these principles in Python

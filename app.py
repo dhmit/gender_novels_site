@@ -26,20 +26,8 @@ def render_team():
     return render_template('team.html')
 
 
-# Still necessary because corpus-notes.html is composed of 2 separate MD files
-@app.route('/info/corpus-notes.html')
-def render_corpus_notes():
-    return render_template('corpus-notes.html')
-
-
-@app.route('/info/statistics.html')
-def render_statistics():
-    return render_template('statistics.html')
-
-
 @app.route('/info/<filename>')
 def render_markdown_any(filename, title=None):
-
     file_path = os.path.join('static', 'markdowns', f'{filename}.md')
 
     try:
@@ -49,7 +37,9 @@ def render_markdown_any(filename, title=None):
         abort(404)
 
     md_in = md_in.replace('(images/', '(/static/markdowns/images/')
+
     markdown_html = markdown2.markdown(md_in)
+
     if title is None:
         title_parts = filename.split('_')
         title = ' '.join([title_word.capitalize() for title_word in title_parts])
