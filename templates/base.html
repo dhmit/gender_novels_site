@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- DH Lab modules -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='js/convertMarkdown.js') }}"></script>
 
     <!-- Bootstrap modules -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,13 +21,10 @@
     <meta property="og:title" content="Gender Novels" />
     <meta property="og:description" content="Computational Reading of Gender in Novels, 1770–1922" />
 
-    <!-- Remarkable module -->
-    <script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
-
     <title>{% block title %}{% endblock title %}</title>
 
-    {% block head %}
-    {% endblock head %}
+    {% block extra_header %}
+    {% endblock extra_header %}
 </head>
 
 <body>
