@@ -1,4 +1,25 @@
-# Data Sanitization
+# Notes
+
+## Web-Based Data Acquisition
+
+At the start of the project, there was a challenge to come up with the most effective way to get an 
+adequate corpus of books for analysis. Towards the beginning, this meant arriving at 100 books as
+quickly as possible, so the analysis team could begin work with a small sample set of novels. Due
+to time constraints, we chose to do this manually. We assigned members of the data group letters 
+of the alphabet to ensure there was no overlap in books stored, and everyone was tasked with 
+finding 9 books. This exercise allowed us to realize the problems we would face when writing the 
+code to scrape the larger corpora of books. These problems included insufficient metadata on 
+Gutenberg - meaning we had to manually searching publication dates to check that books had been 
+published in the proper time frame. We also had to manually check the type of writing. For 
+instance, if it was poetry, non-fiction or written in a foreign language. This led to the 
+realization that there was an inadequate definition of novel, and that we had to better define our 
+parameters. After setting out the terms of the filter, we had to agree on a method for 
+automatically generating the corpora, as manual downloads would be too slow as the project scaled.
+There are many regulations around the use of scrapers to get data from websites, so careful 
+consideration was necessary to avoid any issues we might face using scrapers. In the end, we 
+used mirrors and rsync to download the data.
+
+## Data Sanitization
 
 To make sure the data is as accurate as possible, it is necessary to decide how books 
 should be added and refined for analysis.
@@ -41,3 +62,12 @@ became very important. We developed a method which creates a smaller corpus from
 Sources
 
 Mahfouz, Naguib, and Sabbar S. Sultan. “The Situation of the Novel.” World Literature Today, vol. 79, no. 2, 2005, pp. 46–47. JSTOR, JSTOR, www.jstor.org/stable/40158674
+
+## HathiTrust
+Throughout this project, the MIT DH lab explored corpora other than Gutenberg, the one it ultimately ended up using exclusively. One of the main corpora it considered was HathiTrust, which was valuable not only for the size of its collection, but also for the ease with which books could be scraped from it. 
+
+In preparation for this branch of the project the DH lab conducted research about how Hathitrust is used and navigated, studied a [previously conducted project](https://tedunderwood.com/2015/08/07/a-dataset-for-distant-reading-literature-in-english-1700-1922/) that also used HathiTrust, and learned about the corpus’ terms of use and copyright. 
+
+In addition to research about the corpus itself, the lab also researched the challenges and complications of going from a small sample size of 100 to a much larger one of about 10,000, as the lab initially intended to use Gutenberg for the former and Hathitrust for the latter. Some potential complications discovered included difficulty of bias elimination (it’s harder to check 10,000 books for outliers or non-novels than it is to check 100), program efficiency, and processing power. 
+
+Although the Hathitrust corpus didn’t end up being used, the knowledge obtained from its research was invaluable to the process of expanding the Gutenberg corpus from 100 to 4,200 novels. 
