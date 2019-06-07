@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Page content -->
+    <div class="container-fluid content">
+        <div class="row justify-content-start">
+            <div class="col-12
+                        col-md-8 offset-md-2
+                        ">
+                <h1>Pronoun Adjective Usage</h1>
+                <div class="topic-content">
+                   <h2>Top Adjectives Associated with Each Gender</h2>
+
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <h4 class='text-center'>Female Adjectives</h4>
+                        <table class='table table-sm table-striped' style="width:70%;
+                        margin-left:auto;
+                        margin-right:auto;">
+                            <tr>
+                                <th>Adjective</th>
+                                <th>Difference</th>
+                            </tr>
+                            {% for adj in female_adjectives %}
+                                <tr>
+                                    <td>{{ adj[0] }}</td>
+                                    <td>{{ adj[1] }}</td>
+                                </tr>
+                            {%  endfor %}
+                        </table>
+                        </div>
+                        <div class='col-md-6'>
+                            <h4 class='text-center'>Male Adjectives</h4>
+                            <table class='table table-sm table-striped' style="width:70%;
+                            margin-left:auto;
+                            margin-right:auto;">
+                            <tr>
+                                <th>Adjective</th>
+                                <th>Difference</th>
+                                </tr>
+                            {% for adj in male_adjectives %}
+                                <tr>
+                                    <td>{{ adj[0] }}</td>
+                                    <td>{{ adj[1] }}</td>
+                                </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                
+                <p><strong>These were obtained by calculating the difference between adjective associations with male pronouns, and with female pronouns:</strong> </p>
+                    <p>number of male pronoun associations – number of female pronoun associations = difference value</p>
+                    <p>Adjectives with the highest positive difference values demonstrate the strongest male pronoun association,
+                        and adjectives with the highest negative difference values demonstrate the strongest female pronoun association.</p>
+
+
+                <h2>Methodology</h2>
+                    <p>The code used for this analysis can be found in
+                        <a href="https://github.com/dhmit/gender_novels/blob/master/gender_novels/analysis/pronoun_adjective_analysis.py">pronoun_adjective_analysis.py</a>.</p>
+
+                    <p>The raw analysis returns a dictionary with each novel mapped to an array of 2 dictionaries:</p>
+
+                    <ul>
+                        <li>Each adjective and its number of occurrences associated with male pronouns</li>
+                        <li>Each adjective and its number of occurrences associated with female pronouns</li>
+                    </ul>
+
+                    <p>For each novel, this analysis is conducted by iterating through the novel's tokenized text and considering windows of 10 words.
+                        When the central word of a window is a gendered pronoun, any adjectives also in the window are added to a dictionary.
+                        If there are additionally any opposite-gendered pronouns also in the window then the adjectives are discarded
+                        (as they are technically associated with both gender pronouns in that case).</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
