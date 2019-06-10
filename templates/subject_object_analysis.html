@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Page content -->
+    <div class="container-fluid content">
+        <div class="row justify-content-start">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="topic-content">
+                   <h1>Basic Subject vs Object Pronoun Frequency Analysis</h1>
+
+<p><strong>This page contains data from an analysis of feminine
+and masculine subject pronouns vs object pronouns.</strong></p>
+
+<p>The code used for this analysis can be found in
+gender_pronoun_freq_analysis.py</p>
+
+<p>Two analyses were conducted on this subject. The first compares
+how often each gender's pronouns were used in the subject within
+their gender, i.e., what portion of female pronouns are subject pronouns
+and what portion of male pronouns are subject pronouns. The
+second analysis compares the frequency of masculine and
+feminine pronouns in subject pronouns, ie, what portion of
+subject pronouns are masculine vs feminine.</p>
+
+<h2>First Analysis</h2>
+
+<p>This analysis first separated the pronouns into masculine
+and feminine pronouns and compared frequencies within these
+categories.</p>
+
+<h3>Overall</h3>
+
+<p>These frequencies are the portion of pronouns of a certain
+gender that are subject pronouns. Thus, on average, approximately 72% of
+masculine pronouns in a given novel are subject pronouns while approximately
+45% of feminine pronouns are subject pronouns.</p>
+
+<p>Male:
+0.7245328833821589</p>
+
+<p>Female:
+0.44787289273153363</p>
+
+<h3>Binned</h3>
+
+<p>The following are averages of the same frequency but binned
+over author gender, date published, and location.</p>
+
+<h4>Female pronouns:</h4>
+
+<p>The following are frequencies of female pronouns that are
+ subject pronouns.</p>
+
+<p>By author gender: </p>
+
+<p>Male author: 0.441991212798621</p>
+
+<p>Female author: 0.45798459814830395</p>
+
+<p>By date: (<code>NaN</code> means no novels from this range available)</p>
+
+<p>To 1810 : 0.41417750044585927 </p>
+
+<p>1810 to 1819 : 0.4463033852965594 </p>
+
+<p>1820 to 1829 : <code>NaN</code></p>
+
+<p>1830 to 1839 : 0.35106382978723405 </p>
+
+<p>1840 to 1849 : 0.4184030235018519 </p>
+
+<p>1850 to 1859 : 0.3905045204232324 </p>
+
+<p>1860 to 1869 : 0.4768948491730092 </p>
+
+<p>1870 to 1879 : 0.47558451497862986 </p>
+
+<p>1880 to 1889 : 0.42070917410798475 </p>
+
+<p>1890 to 1899 : <code>NaN</code></p>
+
+<p>1900 on : 0.47236646351007894</p>
+
+<p>By location:</p>
+
+<p>England: 0.44347747403902865 </p>
+
+<p>United States: 0.4549392445507864 </p>
+
+<p>Other: 0.43391869615013184</p>
+
+<h4>Male Pronouns</h4>
+
+<p>By author gender:</p>
+
+<p>Male author: 0.7287418763201214</p>
+
+<p>Female author: 0.7194162706961524</p>
+
+<p>By date:</p>
+
+<p>To 1810: 0.708219281182348</p>
+
+<p>1810 to 1819: 0.7041715628672149 </p>
+
+<p>1820 to 1829: <code>NaN</code></p>
+
+<p>1830 to 1839: 0.7046263345195729 </p>
+
+<p>1840 to 1849: 0.6922031669905926 </p>
+
+<p>1850 to 1859: 0.6990460760450546 </p>
+
+<p>1860 to 1869: 0.7267589702159075 </p>
+
+<p>1870 to 1879: 0.7317825828658459 </p>
+
+<p>1880 to 1889: 0.7296998576365381 </p>
+
+<p>1890 to 1899: <code>NaN</code></p>
+
+<p>1900 on: 0.7312530130825822</p>
+
+<p>By location:</p>
+
+<p>England: 0.7209666004589768</p>
+
+<p>US: 0.7300165752376145</p>
+
+<p>Other: 0.7156454243312463</p>
+
+<h3>Thoughts</h3>
+
+<p>We noticed no trends in the binning for this analysis.
+It did seem notable that about 72% of all male pronouns were
+subject pronouns while only about 45% of female pronouns
+were subject pronouns.</p>
+
+<h2>Analysis 2</h2>
+
+<p>This analysis looked at the percentage of subject pronouns
+that were male verses female. The following frequencies are
+the portion of subject pronouns that are female.</p>
+
+<h3>Overall</h3>
+
+<p>Overall: 0.31606923574399076</p>
+
+<p>Thus, on average, about 32% of the subject pronouns in a given
+novel were feminine.</p>
+
+<h3>Binned</h3>
+
+<h4>By author gender:</h4>
+
+<p>Male author: 0.23516100081271119</p>
+
+<p>Female author: 0.4333655569112226</p>
+
+<h4>By date:</h4>
+
+<p>To 1810: 0.44504635214783195</p>
+
+<p>1810 to 1819: 0.41640324428305886</p>
+
+<p>1820 to 1829: <code>NaN</code></p>
+
+<p>1830 to 1839: 0.09999999999999999</p>
+
+<p>1840 to 1849: 0.31599450339367746</p>
+
+<p>1850 to 1859: 0.3854980861034278</p>
+
+<p>1860 to 1869: 0.42842988831401607</p>
+
+<p>1870 to 1879: 0.3847251297708155</p>
+
+<p>1880 to 1889: 0.2192833286434825</p>
+
+<p>1890 to 1899: <code>NaN</code> </p>
+
+<p>1900 on: 0.31340014426057095</p>
+
+<h4>By location:</h4>
+
+<p>England: 0.3009783595291811</p>
+
+<p>US: 0.3373807026583039</p>
+
+<p>Other: 0.2969183860145596</p>
+
+<h3>Thoughts</h3>
+
+<p>For this analysis, we found the overall comparison and the
+comparison by author gender most noteworthy. We noticed no
+trends in the date binning, though there is a strange deviancy
+from the norm in the 1830's. We noticed no trend based on location.</p>
+
+<h2>Overall Thoughts</h2>
+
+<p>Analysis #1 is probably the most useful of the two. The results
+observed in analysis #2 are likely due to just the frequency of
+male vs female pronoun use in general as observed in an earlier
+analysis (see Pronoun Frequency).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

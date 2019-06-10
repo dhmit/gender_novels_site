@@ -45,6 +45,16 @@ def render_adjective():
                            female_adjectives=female_adjectives, male_adjectives=male_adjectives)
 
 
+@app.route('/info/notes')
+def render_notes():
+    return render_template('corpus_notes.html')
+
+
+@app.route('/info/subject_object_analysis')
+def render_subj_obj():
+    return render_template('subject_object_analysis.html')
+
+
 @app.route('/info/<filename>')
 def render_markdown_any(filename, title=None):
     file_path = os.path.join('static', 'markdowns', f'{filename}.md')
