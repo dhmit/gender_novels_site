@@ -50,11 +50,11 @@ def render_notes():
     return render_template('corpus_notes.html')
 
 
-@app.route('/info/subject_object_analysis')
+@app.route('/info/subject_object_pronoun_analysis')
 def render_subj_obj():
     return render_template('subject_object_analysis.html')
 
-@app.route('/info/pronoun_frequency')
+@app.route('/info/pronoun_frequency_analysis')
 def render_pro_freq():
     return render_template('pronoun_frequency.html')
 
