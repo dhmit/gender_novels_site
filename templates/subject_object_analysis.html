@@ -188,10 +188,30 @@ novel were feminine.</p>
 <h3>Binned</h3>
 
 <h4>By author gender:</h4>
+                    <div class="row">
+     <div class='col-md-6'>
+         <p>Male author: 0.24</p>
+                    <!-- make graphic resize based on size of screen -->
+                    <svg width="300" height="200" id="svg_6"> </svg>
 
-<p>Male author: 0.24</p>
+    <script>
+       makePieChart([{name: "Female", val: 24, color:'#BDE894'}, {name: "Male", val: 76,
+           color:'#FFD1FE'}], '#svg_6')
+        style = "width:70%; margin-left:auto; margin-right:auto;"
+    </script>
+</div>
 
-<p>Female author: 0.43</p>
+    <div class="col-md-6">
+        <p>Female author: 0.43</p>
+         <svg width="300" height="200" id="svg_7"> </svg>
+        <script>
+        makePieChart([{name: "Female", val: 43, color:'#BDE894'}, {name: "Male", val: 57,
+            color:'#FFD1FE'}], '#svg_7')
+        style = "width:70%; margin-left:auto; margin-right:auto;"
+    </script>
+     </div>
+ </div>
+
 
 <h4>By date:</h4>
 
