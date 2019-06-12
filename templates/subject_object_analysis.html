@@ -8,7 +8,11 @@
         text-anchor: middle;
     }
 </style>
-<script src="https://d3js.org/d3.v5.min.js"></script>
+<head>
+    <script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
 
     {% endblock extra_header %}
 
@@ -53,152 +57,15 @@ masculine pronouns in a given novel are subject pronouns while approximately
 45% of feminine pronouns are subject pronouns.</p>
  <div class="row">
      <div class='col-md-6'>
-         <p>Male:
-0.72</p>
+         <p>Male: 0.72</p>
                     <!-- make graphic resize based on size of screen -->
                     <svg width="300" height="200"> </svg>
- <script>
-    const data = [{name: "Subject", val: 72}, {name: "Object", val: 28}];
-
-    const svg = d3.select("svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = Math.min(width, height) / 2,
-        g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-    // const color = d3.scaleOrdinal(['#ca3542', '#27647b']);
-    const color = d3.scaleOrdinal(['#BDE894', '#FFD1FE'])
-
-
-    // Generate the arcs
-    const arc = d3.arc()
-                .innerRadius(0)
-                .outerRadius(radius);
-
-    const label = d3.arc()
-                      .outerRadius(radius)
-                      .innerRadius(radius - 90);
-
-        // Generate the pie
-    const create_pie = d3.pie()
-                .value(function(d) {
-                    return d.val;
-                });
-
-    const pie_data = create_pie(data);
-
-
-
-    //Generate groups
-    const arcs = g.selectAll("arc")
-                .data(pie_data)
-                .enter()
-                .append("g")
-                .attr("class", "arc")
-
-    //Draw arc paths
-    arcs.append("path")
-        .attr("fill", function(d, i) {
-            return color(i);
-        })
-        .attr("d", arc);
-
-
-    arcs.append("text")
-        .attr("transform", function(d) {
-                        return "translate(" + label.centroid(d) + ")";
-                })
-               .text(function(d) { return d.data.name; });
-
-
-</script> <!--
-
-    arcs.append("text")
-        .attr("text-anchor", "middle")
-        .attr("x", function(d) {
-            var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
-            d.cx = Math.cos(a) * (radius - 45);
-            return d.x = Math.cos(a) * (radius+30);
-        })
-        .attr("y", function(d) {
-            var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
-            d.cy = Math.sin(a) * (radius - 45);
-            return d.y = Math.sin(a) * (radius + 30);
-        })
-        .text(function(d) { return d.value.toFixed(2);  })
-        .each(function(d) {
-            var bbox = this.getBBox();
-            d.sx = d.x - bbox.width/2 - 2;
-            d.ox = d.x + bbox.width/2 + 2;
-            d.sy = d.oy = d.y + 5;
-        });
--->
-
-
-
-<!--
-         <script>
-             const data = [{name: "Subject", val: 72}, {name: "Object", val: 28}];
-             var w = 600,
-    h = 400,
-    r = Math.min(w, h) / 2,
-    labelr = r + 30, // radius for label anchor
-    // color = d3.scale.category20(),
-                 color = d3.scaleOrdinal(['#ca3542', '#27647b']),
-    // donut = d3.layout.pie(),
-                 donut = d3.pie(),
-    arc = d3.arc().innerRadius(r*.6).outerRadius(r);
-
-var vis = d3.select("body")
-  .append("svg:svg")
-    .data([data])
-    .attr("width", w + 150)
-    .attr("height", h);
-
-var arcs = vis.selectAll("g.arc")
-    .data(donut.value(function(d) { return d.val }))
-  .enter().append("svg:g")
-    .attr("class", "arc")
-    .attr("transform", "translate(" + (r + 30) + "," + r + ")");
-
-arcs.append("svg:path")
-    .attr("fill", function(d, i) { return color(i); })
-    .attr("d", arc);
-
-arcs.append("text")
-    .attr("text-anchor", "middle")
-    .attr("x", function(d) {
-        var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
-        d.cx = Math.cos(a) * (r - 45);
-        return d.x = Math.cos(a) * (r+30);
-    })
-    .attr("y", function(d) {
-        var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
-        d.cy = Math.sin(a) * (r - 45);
-        return d.y = Math.sin(a) * (r + 30);
-    })
-    .text(function(d) { return d.value.toFixed(2);  })
-    .each(function(d) {
-        var bbox = this.getBBox();
-        d.sx = d.x - bbox.width/2 - 2;
-        d.ox = d.x + bbox.width/2 + 2;
-        d.sy = d.oy = d.y + 5;
-    });
-
-	arcs.append("path")
-    .attr("class", "pointer")
-    .style("fill", "none")
-    .style("stroke", "black")
-
-    .attr("d", function(d) {
-     console.log(d);
-        if(d.cx > d.ox) {
-            return "M" + d.sx + "," + d.sy + "L" + d.ox + "," + d.oy + " " + d.cx + "," + d.cy;
-        } else {
-            return "M" + d.ox + "," + d.oy + "L" + d.sx + "," + d.sy + " " + d.cx + "," + d.cy;
-        }
-    });
-         </script> -->
+<body>
+    <script>
+        pieChart([{name: "Subject", val: 72}, {name: "Object", val: 28}], d3.scaleOrdinal
+        (['#BDE894', '#FFD1FE']))
+    </script>
+</body>
 
      </div>
      <div class="col-md-6">
