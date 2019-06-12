@@ -37,12 +37,11 @@ pronouns in a given novel are female for each novel in the Gutenberg corpus. The
 <p>Below shows the average portion of the total number of pronouns in a given novel that are of each type </p>
 
 <ul>
-<li>Female: 0.325</li>
-<li>Male: 0.675</li>
+<li>Female pronouns: 0.325</li>
+<li>Male pronouns: 0.675</li>
 </ul>
    <svg width="300" height="200" id="svg_0"> </svg>
 <script>
-
     makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
@@ -54,22 +53,26 @@ result has not been tested for statistical significance.</p>
 
 <p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
 
-<ul>
-<li>Male author: 0.25</li>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Male author: 0.25</p>
      <svg width="300" height="200" id="svg_1"> </svg>
 <script>
 
     makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-<li>Female author: 0.53</li>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Female author: 0.53</p>
      <svg width="300" height="200" id="svg_2"> </svg>
 <script>
 
     makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-</ul>
+                        </div>
+                    </div>
 
 
 <p>On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel by a female author contains 52.8% female pronouns. This difference has been shown to be statistically significant at the p = 0.05 level by an independent t test.</p>
@@ -110,8 +113,8 @@ total number of subject pronouns in a given novel that are female for each novel
 <p>Below shows the average portion of the total number of subject pronouns in a given novel that are of each type </p>
 
 <ul>
-<li>Female: 0.325</li>
-<li>Male: 0.675</li>
+<li>Female pronouns: 0.325</li>
+<li>Male pronouns: 0.675</li>
 </ul>
 
  <svg width="300" height="200" id="svg_3"> </svg>
@@ -129,22 +132,26 @@ total number of subject pronouns in a given novel that are female for each novel
 
 <p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
 
-<ul>
-<li>Male author: 0.24</li>
+<div class="row">
+    <div class="col-md-6">
+        <p>Male author: 0.24</p>
      <svg width="300" height="200" id="svg_4"> </svg>
 <script>
-
     makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-<li>Female author: 0.52</li>
+    </div>
+    <div class="col-md-6">
+        <p>Female author: 0.52</p>
      <svg width="300" height="200" id="svg_5"> </svg>
 <script>
-
     makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-</ul>
+    </div>
+</div>
+
+
 
 <p>On average, a novel by a male author in the corpus contains 24.0% female pronouns and a novel by a female author contains 52.0% female pronouns. This difference was shown to be statistically significant at the p = 0.05 level with an independent t test.</p>
 
@@ -187,22 +194,26 @@ pronouns of a given gender that are subject pronouns for each novel in the Guten
 
 <p>Below are the average proportion of the pronouns of the given gender that are subject pronouns.</p>
 
-<ul>
-<li>Male: 0.74</li>
+<div class="row">
+    <div class="col-md-6">
+        <p>Male pronoun: 0.74</p>
      <svg width="300" height="200" id="svg_6"> </svg>
 <script>
-
     makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-<li>Female: 0.47</li>
+    </div>
+    <div class="col-md-6">
+        <p>Female pronoun: 0.47</p>
      <svg width="300" height="200" id="svg_7"> </svg>
 <script>
-
-    makePieChart([{name: 'Subject', val: 25, color: '#BDE894'}, {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7')
+    makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color:
+            '#FFD1FE'}], '#svg_7')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
-</ul>
+    </div>
+</div>
+
 
 <p>On average, for a given novel in the corpus, about 74% of the male pronouns are subject pronouns and about 47% of the female pronouns are subject pronouns. This difference was shown to be statistically significant at the p = 0.05 level.</p>
 
@@ -214,19 +225,23 @@ pronouns of a given gender that are subject pronouns for each novel in the Guten
 
 <ul>
 <li>Male: 0.46</li>
+    <!--
      <svg width="300" height="200" id="svg_8"> </svg>
 <script>
 
     makePieChart([{name: 'Subject', val: 46, color: '#BDE894'}, {name: 'Object', val: 54, color: '#FFD1FE'}], '#svg_8')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
+-->
 <li>Female: 0.48</li>
+    <!--
      <svg width="300" height="200" id="svg_9"> </svg>
 <script>
 
     makePieChart([{name: 'Subject', val: 48, color: '#BDE894'}, {name: 'Object', val: 52, color: '#FFD1FE'}], '#svg_9')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
+-->
 </ul>
 
 <p>No significant difference at the p = 0.05 level was found for these categories.</p>
@@ -265,19 +280,23 @@ pronouns of a given gender that are subject pronouns for each novel in the Guten
 
 <ul>
 <li>Male: 0.75</li>
+    <!--
      <svg width="300" height="200" id="svg_10"> </svg>
 <script>
 
     makePieChart([{name: 'Subject', val: 75, color: '#BDE894'}, {name: 'Object', val: 25, color: '#FFD1FE'}], '#svg_10')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
+-->
 <li>Female: 0.73</li>
+    <!--
      <svg width="300" height="200" id="svg_11"> </svg>
 <script>
 
     makePieChart([{name: 'Subject', val: 73, color: '#BDE894'}, {name: 'Object', val: 27, color: '#FFD1FE'}], '#svg_11')
     style = "width:70%; margin-left:auto; margin-right:auto;"
 </script>
+-->
 </ul>
 
 <h4>By Publication Date</h4>
