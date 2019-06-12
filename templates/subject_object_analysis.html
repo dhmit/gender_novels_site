@@ -8,10 +8,8 @@
         text-anchor: middle;
     }
 </style>
-<head>
-    <script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-</head>
+<script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 
 
     {% endblock extra_header %}
@@ -59,18 +57,24 @@ masculine pronouns in a given novel are subject pronouns while approximately
      <div class='col-md-6'>
          <p>Male: 0.72</p>
                     <!-- make graphic resize based on size of screen -->
-                    <svg width="300" height="200"> </svg>
-<body>
-    <script>
-        pieChart([{name: "Subject", val: 72}, {name: "Object", val: 28}], d3.scaleOrdinal
-        (['#BDE894', '#FFD1FE']))
-    </script>
-</body>
+                    <svg width="300" height="200" id="svg_0"> </svg>
 
+    <script>
+       makePieChart([{name: "Subject", val: 72, color:'#BDE894'}, {name: "Object", val: 28,
+           color:'#FFD1FE'}], '#svg_0')
+        style = "width:70%; margin-left:auto; margin-right:auto;"
+    </script>
+</div>
+
+    <div class="col-md-6">
+        <p>Female: 0.45</p>
+         <svg width="300" height="200" id="svg_1"> </svg>
+        <script>
+        makePieChart([{name: "Subject", val: 45, color:'#BDE894'}, {name: "Object", val: 55, color:'#FFD1FE'}], '#svg_1')
+        style = "width:70%; margin-left:auto; margin-right:auto;"
+    </script>
      </div>
-     <div class="col-md-6">
-         <p>Female: 0.45</p>
-     </div>
+ </div>
 
 
 <h3>Binned</h3>

@@ -1,17 +1,22 @@
 "use strict";
 // const data = [{name: "Subject", val: 72}, {name: "Object", val: 28}];
 
-function pieChart (dataset, colors){
+function makePieChart (dataset, svg_id) {
     const data = dataset;
 
-    const svg = d3.select("svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = Math.min(width, height) / 2,
-        g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    const svg = d3.select(svg_id);
+    const width = svg.attr("width");
+    const height = svg.attr("height");
 
-    // const color = d3.scaleOrdinal(['#ca3542', '#27647b']);
-    const color = colors
+    const radius = Math.min(width, height) / 2;
+    const g = svg.append("g")
+                 .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    let color = [];
+    for (let i = 0; i < dataset.length; i++) {
+        color.push(dataset[i].color);
+    }
+    color = d3.scaleOrdinal(color);
 
 
     // Generate the arcs
