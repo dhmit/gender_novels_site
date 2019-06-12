@@ -54,6 +54,10 @@ def render_notes():
 def render_subj_obj():
     return render_template('subject_object_analysis.html')
 
+@app.route('/info/pronoun_frequency')
+def render_pro_freq():
+    return render_template('pronoun_frequency.html')
+
 
 @app.route('/info/<filename>')
 def render_markdown_any(filename, title=None):
