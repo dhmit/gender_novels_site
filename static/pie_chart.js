@@ -16,7 +16,6 @@ function makePieChart (dataset, svg_id) {
     for (let i = 0; i < dataset.length; i++) {
         color.push(dataset[i].color);
     }
-    color = d3.scaleOrdinal(color);
 
 
     // Generate the arcs
@@ -48,7 +47,7 @@ function makePieChart (dataset, svg_id) {
     //Draw arc paths
     arcs.append("path")
         .attr("fill", function(d, i) {
-            return color(i);
+            return color[i];
         })
         .attr("d", arc);
 
