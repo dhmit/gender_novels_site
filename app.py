@@ -51,11 +51,11 @@ def render_notes():
 
 
 @app.route('/info/subject_object_pronoun_analysis')
-def render_subj_obj():
+def render_subject_object():
     return render_template('subject_object_analysis.html')
 
 @app.route('/info/pronoun_frequency_analysis')
-def render_pro_freq():
+def render_pronoun_frequency():
     return render_template('pronoun_frequency.html')
 
 

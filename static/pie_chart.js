@@ -1,8 +1,13 @@
 "use strict";
-// const data = [{name: "Subject", val: 72}, {name: "Object", val: 28}];
+
+/**
+ * Constructs a labeled pie chart.
+ *
+ * @param dataset
+ * @param svg_id
+ */
 
 function makePieChart (dataset, svg_id) {
-    const data = dataset;
 
     const svg = d3.select(svg_id);
     const width = svg.attr("width");
@@ -12,9 +17,9 @@ function makePieChart (dataset, svg_id) {
     const g = svg.append("g")
                  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    let color = [];
-    for (let i = 0; i < dataset.length; i++) {
-        color.push(dataset[i].color);
+    const color = [];
+    for (const hex of dataset){
+        color.push(hex.color);
     }
 
 
@@ -33,7 +38,7 @@ function makePieChart (dataset, svg_id) {
                     return d.val;
                 });
 
-    const pie_data = create_pie(data);
+    const pie_data = create_pie(dataset);
 
 
 

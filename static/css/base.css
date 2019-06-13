@@ -138,3 +138,9 @@ a:hover {
     }
 }
 
+/* Formatting for pie chart labels */
+text {
+    fill: black;
+    text-anchor: middle;
+}
+
