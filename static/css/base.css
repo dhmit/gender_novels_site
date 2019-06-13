@@ -144,3 +144,21 @@ text {
     text-anchor: middle;
 }
 
+.bar {
+    fill: #B79EF7;
+}
+
+.bar:hover {
+    fill: slateblue;
+}
+
+.axis-x path {
+    display: none;
+}
+
+.axis text {
+    font-size: medium;
+    font-weight: bold;
+    text-anchor: end;
+}
+

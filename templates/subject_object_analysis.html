@@ -2,6 +2,7 @@
 
 {% block extra_header %}
     <script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
+    <script src={{ url_for('static', filename='bar_chart.js') }}></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 {% endblock extra_header %}
 
@@ -71,17 +72,7 @@
                                     <p>Female author: 0.46</p>
 
                                     <p>By date: (<code>NaN</code> means no novels from this range available)</p>
-                                    <p>To 1810 : 0.41</p>
-                                    <p>1810 to 1819 : 0.45</p>
-                                    <p>1820 to 1829 : <code>NaN</code></p>
-                                    <p>1830 to 1839 : 0.35</p>
-                                    <p>1840 to 1849 : 0.42</p>
-                                    <p>1850 to 1859 : 0.39 </p>
-                                    <p>1860 to 1869 : 0.48 </p>
-                                    <p>1870 to 1879 : 0.48 </p>
-                                    <p>1880 to 1889 : 0.42 </p>
-                                    <p>1890 to 1899 : <code>NaN</code></p>
-                                    <p>1900 on : 0.47</p>
+                                    <svg width="1000" height="500" id = "svg_2"></svg>
 
                                     <p>By location:</p>
                                     <p>England: 0.44 </p>
@@ -94,17 +85,8 @@
                                     <p>Female author: 0.72</p>
 
                                     <p>By date:</p>
-                                    <p>To 1810: 0.71</p>
-                                    <p>1810 to 1819: 0.70 </p>
-                                    <p>1820 to 1829: <code>NaN</code></p>
-                                    <p>1830 to 1839: 0.70 </p>
-                                    <p>1840 to 1849: 0.69 </p>
-                                    <p>1850 to 1859: 0.70 </p>
-                                    <p>1860 to 1869: 0.73 </p>
-                                    <p>1870 to 1879: 0.73 </p>
-                                    <p>1880 to 1889: 0.73 </p>
-                                    <p>1890 to 1899: <code>NaN</code></p>
-                                    <p>1900 on: 0.73</p>
+
+                                    <svg width="1000" height="500" id = "svg_3"></svg>
 
                                     <p>By location:</p>
                                     <p>England: 0.72</p>
@@ -183,5 +165,30 @@
         makePieChart([{name: "Female", val: 43, color:'#BDE894'}, {name: "Male", val: 57, color:'#FFD1FE'}], '#svg_7');
         makePieChart([{name: "Subject", val: 72, color:'#BDE894'}, {name: "Object", val: 28, color:'#FFD1FE'}], '#svg_0');
         makePieChart([{name: "Subject", val: 45, color:'#BDE894'}, {name: "Object", val: 55, color:'#FFD1FE'}], '#svg_1');
+
+        makeBarChart([{date: '1800s', frequency: 0.41},
+                      {date: '1810s', frequency: 0.45},
+                      {date: '1820s', frequency: 0},
+                      {date: '1830s', frequency: 0.35},
+                      {date: '1840s', frequency: 0.42},
+                      {date: '1850s', frequency: 0.39},
+                      {date: '1860s', frequency: 0.48},
+                      {date: '1870s', frequency: 0.48},
+                      {date: '1880s', frequency: 0.42},
+                      {date: '1890s', frequency: 0},
+                      {date: '1900s', frequency: 0.47},], "#svg_2");
+        makeBarChart([])
+
     </script>
+    <p>To 1810: 0.71</p>
+                                    <p>1810 to 1819: 0.70 </p>
+                                    <p>1820 to 1829: <code>NaN</code></p>
+                                    <p>1830 to 1839: 0.70 </p>
+                                    <p>1840 to 1849: 0.69 </p>
+                                    <p>1850 to 1859: 0.70 </p>
+                                    <p>1860 to 1869: 0.73 </p>
+                                    <p>1870 to 1879: 0.73 </p>
+                                    <p>1880 to 1889: 0.73 </p>
+                                    <p>1890 to 1899: <code>NaN</code></p>
+                                    <p>1900 on: 0.73</p>
 {% endblock %}
