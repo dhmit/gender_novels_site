@@ -1,285 +1,340 @@
 {% extends "base.html" %}
 
 {% block extra_header %}
-    
-<script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+{% endblock extra_header %}
 
-
-    {% endblock extra_header %}
-{% block title %}{{ title }}{% endblock %}
+{% block title %} Pronoun Frequency Analysis {% endblock %}
+{% block header %} Pronoun Frequency Analysis {% endblock %}
 
 {% block content %}
     <!-- Page content -->
     <div class="container-fluid content">
         <div class="row justify-content-start">
-            <div class="col-2">
-            </div>
+            <div class="col-2"></div>
             <div class="col-8">
                 <div class="topic-content">
-                   <h1>Gendered Pronoun Frequency Analyses</h1>
+                    <h1>Gendered Pronoun Frequency Analyses</h1>
+                        <p>
+                            Several analyses of gendered pronouns in 19th century novels were conducted. First, the
+                            average frequency of male and female pronouns in a 19th century novel was analyzed. Second,
+                            the portion of subject pronouns that are female pronouns were analyzed and compared with
+                            the portion of all pronouns that are female pronouns. Lastly, the proportion of female
+                            pronouns that are subject pronouns and the proportion of male pronouns that are subject
+                            pronouns were analyzed. </p>
 
-<p>Several analyses of gendered pronouns in 19th century novels were conducted. First, the average frequency of male and female pronouns in a 19th century novel was analyzed. Second, the portion of subject pronouns that are female pronouns were analyzed and compared with the the portion of all pronouns that are female pronouns. Lastly, the proportion of female pronouns that are subject pronouns and the proportion of male pronouns that are subject pronouns were analyzed. </p>
+                    <h2>Analysis #1 - Frequency of Gendered Pronouns</h2>
+                        <p>
+                            Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
+                            the total number of pronouns in a given novel are female for each novel in the Gutenberg
+                            corpus. Then, results were binned by author gender, date published, and location of
+                            publication.
+                        </p>
 
-<h2>Analysis #1 - Frequency of Gendered Pronouns</h2>
+                    <h4>Overall</h4>
+                        <p>
+                            Below shows the average portion of the total number of pronouns in a given novel that are
+                            of each type
+                        </p>
+                            <ul>
+                                <li>Female pronouns: 0.325</li>
+                                <li>Male pronouns: 0.675</li>
+                            </ul>
+                        <svg width="300" height="200" id="svg_0"> </svg>
+                        <p>
+                            On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns.
+                            This result has not been tested for statistical significance.
+                        </p>
 
-<p>Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of the total number of
-pronouns in a given novel are female for each novel in the Gutenberg corpus. Then, results were binned by author gender, date published, and location of publication.</p>
-
-<h4>Overall</h4>
-
-<p>Below shows the average portion of the total number of pronouns in a given novel that are of each type </p>
-
-<ul>
-<li>Female pronouns: 0.325</li>
-<li>Male pronouns: 0.675</li>
-</ul>
-   <svg width="300" height="200" id="svg_0"> </svg>
-
-<p>On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns. This
-result has not been tested for statistical significance.</p>
-
-<h4>By Author Gender</h4>
-
-<p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
+                    <h4>By Author Gender</h4>
+                        <p>
+                            Below shows the average portion of the total number of pronouns in a given novel that are
+                            female sorted by author gender.
+                        </p>
 
                     <div class="row">
                         <div class="col-md-6">
                             <p>Male author: 0.25</p>
-     <svg width="300" height="200" id="svg_1"> </svg>
-
+                            <svg width="300" height="200" id="svg_1"> </svg>
                         </div>
+
                         <div class="col-md-6">
                             <p>Female author: 0.53</p>
-     <svg width="300" height="200" id="svg_2"> </svg>
-
+                            <svg width="300" height="200" id="svg_2"> </svg>
                         </div>
                     </div>
 
+                    <p>
+                        On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel
+                        by a female author contains 52.8% female pronouns. This difference has been shown to be
+                        statistically significant at the p = 0.05 level by an independent t test.
+                    </p>
 
-<p>On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel by a female author contains 52.8% female pronouns. This difference has been shown to be statistically significant at the p = 0.05 level by an independent t test.</p>
+                    <h4>By Date</h4>
+                        <ul>
+                            <li>To 1810: 0.35</li>
+                            <li>1810 to 1819: 0.37</li>
+                            <li>1820 to 1829: 0.23</li>
+                            <li>1830 to 1839: 0.23</li>
+                            <li>1840 to 1849: 0.28</li>
+                            <li>1850 to 1859: 0.35</li>
+                            <li>1860 to 1869: 0.38</li>
+                            <li>1870 to 1879: 0.40</li>
+                            <li>1880 to 1889: 0.35</li>
+                            <li>1890 to 1899: <code>NaN</code></li>
+                            <li>1900 on: 0.33</li>
+                        </ul>
 
-<h4>By Date</h4>
+                    <h4>By Publication Location</h4>
+                        <ul>
+                            <li>United Kingdom: 0.33</li>
+                            <li>United States: 0.34</li>
+                            <li>Other: 0.33</li>
+                        </ul>
 
-<ul>
-<li>To 1810: 0.35</li>
-<li>1810 to 1819: 0.37</li>
-<li>1820 to 1829: 0.23</li>
-<li>1830 to 1839: 0.23</li>
-<li>1840 to 1849: 0.28</li>
-<li>1850 to 1859: 0.35</li>
-<li>1860 to 1869: 0.38</li>
-<li>1870 to 1879: 0.40</li>
-<li>1880 to 1889: 0.35</li>
-<li>1890 to 1899: <code>NaN</code></li>
-<li>1900 on: 0.33</li>
-</ul>
+                    <p>
+                        No patterns or significant difference was found between categories for publication date or
+                        publication location.
+                    </p>
 
-<h4>By Publication Location</h4>
+                    <h2>Analysis #2 - Frequency of Gendered Subject Pronouns</h2>
+                        <p>
+                            Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
+                            the total number of subject pronouns in a given novel that are female for each novel in the
+                            Gutenberg corpus. Then, results were binned by author gender, date published, and location
+                            of publication. Then, these data were compared with the data from Analysis #1 to determine
+                            if there is a difference in gender pronoun usage for subject vs object pronouns.
+                        </p>
 
-<ul>
-<li>United Kingdom: 0.33</li>
-<li>United States: 0.34</li>
-<li>Other: 0.33</li>
-</ul>
+                    <h4>Overall</h4>
+                        <p>
+                            Below shows the average portion of the total number of subject pronouns in a given novel
+                            that are of each type
+                        </p>
+                            <ul>
+                                <li>Female pronouns: 0.325</li>
+                                <li>Male pronouns: 0.675</li>
+                            </ul>
+                        <svg width="300" height="200" id="svg_3"> </svg>
+                        <p>
+                            On average, a novel in corpus contains 32.5% female pronouns and 67.5% male pronouns. This
+                            result has not been tested for statistical significance.
+                        </p>
+                        <p>
+                            This result was then compared with the overall results for Analysis #1. No significant
+                            difference was found at the p = 0.05 level.
+                        </p>
 
-<p>No patterns or significant difference was found between categories for publication date or publication location.</p>
+                    <h4>By Author Gender</h4>
+                        <p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
 
-<h2>Analysis #2 - Frequency of Gendered Subject Pronouns</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Male author: 0.24</p>
+                                <svg width="300" height="200" id="svg_4"> </svg>
+                            </div>
 
-<p>Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of the
-total number of subject pronouns in a given novel that are female for each novel in the Gutenberg corpus. Then, results were binned by author gender, date published, and location of publication. Then, these data were compared with the data from Analysis #1 to determine if there is a difference in gender pronoun usage for subject vs object pronouns.</p>
+                            <div class="col-md-6">
+                                <p>Female author: 0.52</p>
+                                <svg width="300" height="200" id="svg_5"> </svg>
+                            </div>
+                        </div>
 
-<h4>Overall</h4>
+                        <p>
+                            On average, a novel by a male author in the corpus contains 24.0% female pronouns and a novel
+                            by a female author contains 52.0% female pronouns. This difference was shown to be statistically
+                            significant at the p = 0.05 level with an independent t test.
+                        </p>
+                        <p>
+                            The results for female authors and male authors were compared with the results in Analysis #1.
+                            No significant difference was found at the p = 0.05 level. This implies that female and male
+                            authors do not use gendered pronouns any more or less frequently in the subject than they do
+                            overall.
+                        </p>
 
-<p>Below shows the average portion of the total number of subject pronouns in a given novel that are of each type </p>
+                    <h4>By Date</h4>
+                        <ul>
+                            <li>To 1810: 0.34</li>
+                            <li>1810 to 1819: 0.37</li>
+                            <li>1820 to 1829: 0.22</li>
+                            <li>1830 to 1839: 0.21</li>
+                            <li>1840 to 1849: 0.28</li>
+                            <li>1850 to 1859: 0.34</li>
+                            <li>1860 to 1869: 0.37</li>
+                            <li>1870 to 1879: 0.40</li>
+                            <li>1880 to 1889: 0.34</li>
+                            <li>1890 to 1899: <code>NaN</code></li>
+                            <li>1900 on: 0.32</li>
+                        </ul>
 
-<ul>
-<li>Female pronouns: 0.325</li>
-<li>Male pronouns: 0.675</li>
-</ul>
+                    <h4>By Publication Location</h4>
+                        <ul>
+                            <li>United Kingdom: 0.33</li>
+                            <li>United States: 0.33</li>
+                            <li>Other: 0.32</li>
+                        </ul>
+                        <p>
+                            As in Analysis #1, no patterns or significant differences were found for date of publication
+                            or publication location.
+                        </p>
 
- <svg width="300" height="200" id="svg_3"> </svg>
+                    <h2>Analysis #3 - Frequency of Each Type of Gendered Pronoun that are Subject Pronouns</h2>
+                        <p>
+                            Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
+                            the total number of pronouns of a given gender that are subject pronouns for each novel in
+                            the Gutenberg corpus. Then, results were binned by author gender, date published, and
+                            location of publication.
+                        </p>
+                        <p>
+                            This analysis is separated into two parts, 3a and 3b. 3a is the analysis of female pronouns
+                            and 3b is the analysis of male pronouns.
+                        </p>
 
-<p>On average, a novel in corpus contains 32.5% female pronouns and 67.5% male pronouns. This result has not been tested for statistical significance.</p>
+                    <h4>Overall</h4>
+                        <p>
+                            Below are the average proportion of the pronouns of the given gender that are subject
+                            pronouns.
+                        </p>
 
-<p>This result was then compared with the overall results for Analysis #1. No significant difference was found at the p = 0.05 level. </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Male pronoun: 0.74</p>
+                            <svg width="300" height="200" id="svg_6"> </svg>
+                        </div>
 
-<h4>By Author Gender</h4>
+                        <div class="col-md-6">
+                            <p>Female pronoun: 0.47</p>
+                            <svg width="300" height="200" id="svg_7"> </svg>
+                        </div>
+                    </div>
 
-<p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
+                    <p>
+                        On average, for a given novel in the corpus, about 74% of the male pronouns are subject pronouns
+                        and about 47% of the female pronouns are subject pronouns. This difference was shown to be
+                        statistically significant at the p = 0.05 level.
+                    </p>
 
-<div class="row">
-    <div class="col-md-6">
-        <p>Male author: 0.24</p>
-     <svg width="300" height="200" id="svg_4"> </svg>
-    </div>
-    <div class="col-md-6">
-        <p>Female author: 0.52</p>
-     <svg width="300" height="200" id="svg_5"> </svg>
-    </div>
-</div>
+                    <h3>3a - Female Pronouns</h3>
+                        <p>
+                            The following are the average proportions of female pronouns in a given novel that are
+                            subject pronouns.
+                        </p>
 
+                    <h4>By Author Gender</h4>
+                        <ul>
+                            <li>Male: 0.46</li>
+                            <li>Female: 0.48</li>
+                        </ul>
+                        <p>No significant difference at the p = 0.05 level was found for these categories.</p>
 
+                    <h4>By Publication Date</h4>
+                        <ul>
+                            <li>Before 1810: 0.41</li>
+                            <li>1810 to 1819: 0.40</li>
+                            <li>1820 to 1829: 0.37</li>
+                            <li>1830 to 1839: 0.39</li>
+                            <li>1840 to 1849:  0.41</li>
+                            <li>1850 to 1859: 0.43</li>
+                            <li>1860 to 1869: 0.43</li>
+                            <li>1870 to 1879: 0.45</li>
+                            <li>1880 to 1889: 0.46</li>
+                            <li>1890 to 1899: <code>NaN</code></li>
+                            <li>1900 to 1922: 0.48</li>
+                        </ul>
 
-<p>On average, a novel by a male author in the corpus contains 24.0% female pronouns and a novel by a female author contains 52.0% female pronouns. This difference was shown to be statistically significant at the p = 0.05 level with an independent t test.</p>
+                    <h4>By Publication Location</h4>
+                        <ul>
+                            <li>United Kingdom 0.46</li>
+                            <li>United States: 0.47</li>
+                            <li>Other: 0.47</li>
+                        </ul>
+                        <p>No patterns or significant differences were found for any of the above categories.</p>
 
-<p>The results for female authors and male authors were compared with the results in Analysis #1. No significant difference was found at the p = 0.05 level. This implies that female and male authors do not use gendered pronouns any more or less frequently in the subject than they do overall.</p>
+                    <h3>3b - Male Pronouns</h3>
+                        <p>
+                            The following are the average proportions of male pronouns in a given novel that are
+                            subject pronouns.
+                        </p>
 
-<h4>By Date</h4>
+                    <h4>Author Gender</h4>
+                        <ul>
+                            <li>Male: 0.75</li>
+                            <li>Female: 0.73</li>
+                        </ul>
 
-<ul>
-<li>To 1810: 0.34</li>
-<li>1810 to 1819: 0.37</li>
-<li>1820 to 1829: 0.22</li>
-<li>1830 to 1839: 0.21</li>
-<li>1840 to 1849: 0.28</li>
-<li>1850 to 1859: 0.34</li>
-<li>1860 to 1869: 0.37</li>
-<li>1870 to 1879: 0.40</li>
-<li>1880 to 1889: 0.34</li>
-<li>1890 to 1899: <code>NaN</code></li>
-<li>1900 on: 0.32</li>
-</ul>
+                    <h4>By Publication Date</h4>
+                        <ul>
+                            <li>Before 1810: 0.71</li>
+                            <li>1810 to 1819: 0.70</li>
+                            <li>1820 to 1829: 0.72</li>
+                            <li>1830 to 1839: 0.73</li>
+                            <li>1840 to 1849: 0.70</li>
+                            <li>1850 to 1859: 0.71</li>
+                            <li>1860 to 1869: 0.71</li>
+                            <li>1870 to 1879: 0.72</li>
+                            <li>1880 to 1889: 0.73</li>
+                            <li>1890 to 1899: <code>NaN</code></li>
+                            <li>1900 to 1922': 0.75</li>
+                        </ul>
 
-<h4>By Publication Location</h4>
+                    <h4>By Publication Location</h4>
+                        <ul>
+                            <li>United Kingdom 0.73</li>
+                            <li>United States: 0.74</li>
+                            <li>Neither: 0.75</li>
+                        </ul>
+                        <p>No patterns or significant differences were found for any of these categories.</p>
 
-<ul>
-<li>United Kingdom: 0.33</li>
-<li>United States: 0.33</li>
-<li>Other: 0.32</li>
-</ul>
-
-<p>As in Analysis #1, no patterns or significant differences were found for date of publication or publication location.</p>
-
-<h2>Analysis #3 - Frequency of Each Type of Gendered Pronoun that are Subject Pronouns</h2>
-
-<p>Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of the total number of
-pronouns of a given gender that are subject pronouns for each novel in the Gutenberg corpus. Then, results were binned by author gender, date published, and location of publication.</p>
-
-<p>This analysis is separated into two parts, 3a and 3b. 3a is the analysis of female pronouns and 3b is the analysis of male pronouns.</p>
-
-<h4>Overall</h4>
-
-<p>Below are the average proportion of the pronouns of the given gender that are subject pronouns.</p>
-
-<div class="row">
-    <div class="col-md-6">
-        <p>Male pronoun: 0.74</p>
-     <svg width="300" height="200" id="svg_6"> </svg>
-    </div>
-    <div class="col-md-6">
-        <p>Female pronoun: 0.47</p>
-     <svg width="300" height="200" id="svg_7"> </svg>
-    </div>
-</div>
-
-
-<p>On average, for a given novel in the corpus, about 74% of the male pronouns are subject pronouns and about 47% of the female pronouns are subject pronouns. This difference was shown to be statistically significant at the p = 0.05 level.</p>
-
-<h3>3a - Female Pronouns</h3>
-
-<p>The following are the average proportions of female pronouns in a given novel that are subject pronouns.</p>
-
-<h4>By Author Gender</h4>
-
-<ul>
-<li>Male: 0.46</li>
-<li>Female: 0.48</li>
-</ul>
-
-<p>No significant difference at the p = 0.05 level was found for these categories.</p>
-
-<h4>By Publication Date</h4>
-
-<ul>
-<li>Before 1810: 0.41</li>
-<li>1810 to 1819: 0.40</li>
-<li>1820 to 1829: 0.37</li>
-<li>1830 to 1839: 0.39</li>
-<li>1840 to 1849:  0.41</li>
-<li>1850 to 1859: 0.43</li>
-<li>1860 to 1869: 0.43</li>
-<li>1870 to 1879: 0.45</li>
-<li>1880 to 1889: 0.46</li>
-<li>1890 to 1899: <code>NaN</code></li>
-<li>1900 to 1922: 0.48</li>
-</ul>
-
-<h4>By Publication Location</h4>
-
-<ul>
-<li>United Kingdom 0.46</li>
-<li>United States: 0.47</li>
-<li>Other: 0.47</li>
-</ul>
-
-<p>No patterns or significant differences were found for any of the above categories.</p>
-
-<h3>3b - Male Pronouns</h3>
-
-<p>The following are the average proportions of male pronouns in a given novel that are subject pronouns.</p>
-
-<h4>Author Gender</h4>
-
-<ul>
-<li>Male: 0.75</li>
-<li>Female: 0.73</li>
-</ul>
-
-<h4>By Publication Date</h4>
-
-<ul>
-<li>Before 1810: 0.71</li>
-<li>1810 to 1819: 0.70</li>
-<li>1820 to 1829: 0.72</li>
-<li>1830 to 1839: 0.73</li>
-<li>1840 to 1849: 0.70</li>
-<li>1850 to 1859: 0.71</li>
-<li>1860 to 1869: 0.71</li>
-<li>1870 to 1879: 0.72</li>
-<li>1880 to 1889: 0.73</li>
-<li>1890 to 1899: <code>NaN</code></li>
-<li>1900 to 1922': 0.75</li>
-</ul>
-
-<h4>By Publication Location</h4>
-
-<ul>
-<li>United Kingdom 0.73</li>
-<li>United States: 0.74</li>
-<li>Neither: 0.75</li>
-</ul>
-
-<p>No patterns or significant differences were found for any of these categories.</p>
-
-<h2>Discussion of Results</h2>
-
-<p>Analysis #1 shows that female authors use female pronouns more often than male authors. </p>
-
-<p>Analysis #2 shows that female authors use female subject pronouns more often than male authors, which is to be expected based off the results of Analysis #1. No significant difference was found between the results of Analysis #1 and Analysis #2. This implies that the proportion of subject pronouns that are one gender or another is the same as the proportion when considering all pronouns.</p>
-
-<p>Analysis #3 shows that male pronouns are used more often in the subject than female pronouns. It was also found that there is no significant difference in male/female subject pronoun frequencies by author gender. </p>
-
-<p>The comparison between Analysis #1 and Analysis #2 and the results of Analysis #3 seem to present conflicting conclusions. The comparison between #1 and #2 seems to imply that pronouns of a particular gender are used in the subject at the same rate that they are used overall. Analysis #3 presents that most male pronouns are subject pronouns and most female pronouns are object pronouns. </p>
-
-<p>This may suggest that most protagonists in this literature are males. Thus, it would be logical that male pronouns would be used more often, and since the male is the main character, when thost pronouns are used they would be subject pronouns. However, one would expect male and female authors to then show a difference in Analysis #3b as in Analysis #1. Since this is not the case, it seems that female authors do include more female characters, but they must be supporting characters that receive action instead of do the action. Pronoun frequencies alone cannot support this conclusion, and more research is needed on this subject.</p>
-
-<p>Overall, female authors from this time period use female pronouns more often on average than male authors. Male pronouns are used more often in the subject than the object, and female pronouns are used more often in the object than the subject. This result does not vary based on author gender.</p>
-
+                    <h2>Discussion of Results</h2>
+                        <p>Analysis #1 shows that female authors use female pronouns more often than male authors. </p>
+                        <p>
+                            Analysis #2 shows that female authors use female subject pronouns more often than male
+                            authors, which is to be expected based off the results of Analysis #1. No significant
+                            difference was found between the results of Analysis #1 and Analysis #2. This implies that
+                            the proportion of subject pronouns that are one gender or another is the same as the
+                            proportion when considering all pronouns.
+                        </p>
+                        <p>
+                            Analysis #3 shows that male pronouns are used more often in the subject than female
+                            pronouns. It was also found that there is no significant difference in male/female subject
+                            pronoun frequencies by author gender.
+                        </p>
+                        <p>
+                            The comparison between Analysis #1 and Analysis #2 and the results of Analysis #3 seem to
+                            present conflicting conclusions. The comparison between #1 and #2 seems to imply that
+                            pronouns of a particular gender are used in the subject at the same rate that they are used
+                            overall. Analysis #3 presents that most male pronouns are subject pronouns and most female
+                            pronouns are object pronouns.
+                        </p>
+                        <p>
+                            This may suggest that most protagonists in this literature are males. Thus, it would be
+                            logical that male pronouns would be used more often, and since the male is the main
+                            character, when thost pronouns are used they would be subject pronouns. However, one would
+                            expect male and female authors to then show a difference in Analysis #3b as in Analysis #1.
+                            Since this is not the case, it seems that female authors do include more female characters,
+                            but they must be supporting characters that receive action instead of do the action. Pronoun
+                            frequencies alone cannot support this conclusion, and more research is needed on this
+                            subject.
+                        </p>
+                        <p>
+                            Overall, female authors from this time period use female pronouns more often on average than
+                            male authors. Male pronouns are used more often in the subject than the object, and female
+                            pronouns are used more often in the object than the subject. This result does not vary based
+                            on author gender.
+                        </p>
                 </div>
             </div>
         </div>
     </div>
-
-<script>
-    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
-    makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
-    makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
-    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3')
-    makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
-    makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
-    makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
-    makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7')
-</script>
+    <script>
+        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
+        makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
+        makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
+        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3')
+        makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
+        makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
+        makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
+        makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7')
+    </script>
 {% endblock %}
