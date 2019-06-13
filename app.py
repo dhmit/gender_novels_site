@@ -59,6 +59,11 @@ def render_pronoun_frequency():
     return render_template('pronoun_frequency.html')
 
 
+@app.route('/info/instance_distance_analysis')
+def render_instance_distance():
+    return render_template('instance_distance.html')
+
+
 @app.route('/info/<filename>')
 def render_markdown_any(filename, title=None):
     file_path = os.path.join('static', 'markdowns', f'{filename}.md')
