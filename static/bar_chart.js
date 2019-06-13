@@ -1,5 +1,12 @@
 "use strict";
 
+
+/**
+ * Constructs a bar chart
+ *
+ * @param data: dictionary where keys are date and frequency
+ * @param svg_id: id attribute to svg for placement of the chart
+ */
 function makeBarChart(data, svg_id) {
     const svg = d3.select(svg_id),
         margin = {top: 20, right: 20, bottom: 30, left: 50},
