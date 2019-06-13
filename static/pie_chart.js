@@ -3,8 +3,8 @@
 /**
  * Constructs a labeled pie chart.
  *
- * @param dataset
- * @param svg_id
+ * @param dataset: dictionary where keys are name, value (percentage), and color (hex)
+ * @param svg_id: id attribute to svg for placement of the graph
  */
 
 function makePieChart (dataset, svg_id) {
