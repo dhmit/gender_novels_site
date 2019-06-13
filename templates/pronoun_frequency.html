@@ -35,10 +35,6 @@ pronouns in a given novel are female for each novel in the Gutenberg corpus. The
 <li>Male pronouns: 0.675</li>
 </ul>
    <svg width="300" height="200" id="svg_0"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
- 
-</script>
 
 <p>On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns. This
 result has not been tested for statistical significance.</p>
@@ -51,16 +47,12 @@ result has not been tested for statistical significance.</p>
                         <div class="col-md-6">
                             <p>Male author: 0.25</p>
      <svg width="300" height="200" id="svg_1"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
-</script>
+
                         </div>
                         <div class="col-md-6">
                             <p>Female author: 0.53</p>
      <svg width="300" height="200" id="svg_2"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
-</script>
+
                         </div>
                     </div>
 
@@ -108,9 +100,6 @@ total number of subject pronouns in a given novel that are female for each novel
 </ul>
 
  <svg width="300" height="200" id="svg_3"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3')
-</script>
 
 <p>On average, a novel in corpus contains 32.5% female pronouns and 67.5% male pronouns. This result has not been tested for statistical significance.</p>
 
@@ -124,16 +113,10 @@ total number of subject pronouns in a given novel that are female for each novel
     <div class="col-md-6">
         <p>Male author: 0.24</p>
      <svg width="300" height="200" id="svg_4"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
-</script>
     </div>
     <div class="col-md-6">
         <p>Female author: 0.52</p>
      <svg width="300" height="200" id="svg_5"> </svg>
-<script>
-    makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
-</script>
     </div>
 </div>
 
@@ -184,18 +167,10 @@ pronouns of a given gender that are subject pronouns for each novel in the Guten
     <div class="col-md-6">
         <p>Male pronoun: 0.74</p>
      <svg width="300" height="200" id="svg_6"> </svg>
-<script>
-    makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
- 
-</script>
     </div>
     <div class="col-md-6">
         <p>Female pronoun: 0.47</p>
      <svg width="300" height="200" id="svg_7"> </svg>
-<script>
-    makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color:
-            '#FFD1FE'}], '#svg_7')
-</script>
     </div>
 </div>
 
@@ -296,4 +271,15 @@ pronouns of a given gender that are subject pronouns for each novel in the Guten
             </div>
         </div>
     </div>
+
+<script>
+    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
+    makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
+    makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
+    makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3')
+    makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
+    makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
+    makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
+    makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7')
+</script>
 {% endblock %}
