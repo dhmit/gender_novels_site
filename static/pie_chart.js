@@ -61,6 +61,7 @@ function makePieChart (dataset, svg_id) {
         .attr("transform", function(d) {
                         return "translate(" + label.centroid(d) + ")";
                 })
-               .text(function(d) { return d.data.name; });
+               .text(function(d) { return (d.data.name) + "\n" + (d.data.val) + "%"; });
+
 }
 

@@ -7,6 +7,20 @@ h1, h2, h3 {
     text-align: center;
 }
 
+div.topic-content, div.goals {
+    /*text-align: center;*/
+    background-color: #ffffff;
+    width: fit-content;
+}
+
+div.column_1 {
+    float: left;
+}
+
+div.column_2 {
+    float: right;
+}
+
 div {
     font-family: "Sorts Mill Goudy";
 }
