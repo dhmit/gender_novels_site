@@ -8,19 +8,18 @@ is time efficient; however, the data gathered is not as specific as manual scrap
 This means a user will manually visit a website, navigate to a specific file, download the file 
 to a specific location and name the file. This process is very time consuming, however still has 
 benefits. It requires little to no coding ability and is unlikely to violate any fair use laws in
- the contexts of downloading from publicly stored books. If only certain books are required, 
+ the context of downloading from publicly stored books. If only certain books are required, 
  manual scraping allows for human filtering which, in cases where the boundaries cannot be easily 
  defined/written in code, can be faster than automatic scraping. For a small set of data, this 
- may be
- the optimal method considering the amount of people working on a project. However, for a larger set 
- of data other methods should be used.
+ may be the optimal method considering the amount of people working on a project. However, for a 
+ larger set of data, other methods should be used.
 
 ## Automatic scraping
-Automatic scraping involves writing a script to download a series of files. Once written 
-this method is much faster than manual scraping however has some significant drawbacks. While web 
+Automatic scraping involves writing a script to download a series of files. Once written, 
+this method is much faster than manual scraping, but has some significant drawbacks. While web 
 scraping is not officially against U.S. law, some may see it as against the fair use policy to 
-disobey the guidelines set out in the `robots.txt` file. The `robots.txt` file is a file that shows 
-what types of robots are allowed to visit a website. Project Gutenberg's `robots.txt` file 
+disobey the guidelines set out in a website's `robots.txt` file. The `robots.txt` file is a file 
+that shows what types of robots are allowed to visit a website. Project Gutenberg's `robots.txt` file 
 indicates they do not want their website scraped.
 
 One of the main reasons why websites are against scraping as it causes a drain on the server. This 
