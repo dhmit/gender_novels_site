@@ -7,10 +7,18 @@ h1, h2, h3 {
     text-align: center;
 }
 
-div.topic-content, div.goals {
+h2, p {
+    border-width: 100px;
+    border-color: #ffffff;
+}
+
+div.topic-content, div.goals, div.image, div.links {
     /*text-align: center;*/
     background-color: #ffffff;
-    width: fit-content;
+}
+
+div.col {
+    padding: 10px, 10px, 10px, 10px;
 }
 
 div.column_1 {
@@ -21,6 +29,11 @@ div.column_2 {
     float: right;
 }
 
+div.row-2 {
+    padding: 10px, 0px, 0px, 0px;
+    background-color: #FCF5E9;
+    color: #FCF5E9;
+}
 div {
     font-family: "Sorts Mill Goudy";
 }
