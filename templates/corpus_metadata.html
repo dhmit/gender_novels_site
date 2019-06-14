@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Page content -->
+    <div class="container-fluid content">
+        <div class="row justify-content-start">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="topic-content">
+                   <h1>Metadata Acquisition</h1>
+
+                    <h2>About Metadata</h2>
+
+                    <p>Metadata is defined as "data about data."  In our case, metadata refers to additional data about our novels aside from the stories within them.
+                        While acquiring metadata doesn't involve any natural language processing, this data is still important for a variety of purposes, including analysis: </p>
+
+                    <h4>Analysis Metadata</h4>
+
+                    <ul>
+                        <li>Author</li>
+                        <li>Title</li>
+                        <li>Publication date</li>
+                        <li>Publication country</li>
+                        <li>Author gender</li>
+                        <li>Project Gutenberg-defined subjects</li>
+                    </ul>
+
+                    <p>You can see that having the publication date would be useful for doing analysis of how literature changes over time,
+                        or how having the author gender would be useful for comparing how male and female authors represent their characters.
+                        This kind of information would often be difficult or impossible to determine simply by analyzing the text.  </p>
+
+                    <h4>Filtering Metadata</h4>
+
+                    <ul>
+                        <li>Publication date</li>
+                        <li>Copyright status</li>
+                        <li>Language</li>
+                        <li>Translation status</li>
+                        <li>Project Gutenberg-defined subjects</li>
+                    </ul>
+
+                    <p>These metadata are important for keeping the corpus clean and making sure only desired novels are
+                        included.  For example, we don't want any novels in Chinese.  However, not all of this metadata is actually saved by us—
+                        there's no reason to keep track of novel languages if we expect to only keep those that are in English.  </p>
+                    <p>There's also some metadata that we associate with the books to make them easy to access and process
+                        but which aren't directly connected with analysis or filtering.  </p>
+
+                    <h4>Additional Metadata</h4>
+
+                    <ul>
+                        <li>Gutenberg ID</li>
+                        <li>Corpus Name</li>
+                        <li>Notes</li>
+                    </ul>
+
+                    <p>The Gutenberg ID of a novel is useful as a specific and unambiguous identifier for naming files
+                        and also looking up specific novels.  The corpus name allows us to distinguish books in our final
+                        corpus from the <a href="/info/web_scraping">initial 100 sample novels that we gathered</a>.  Notes are for
+                        anything unusual about a novel, and are usually left empty.  </p>
+
+                    <h2>Metadata Sources</h2>
+
+                    <p>Where do we get metadata?  </p>
+
+                    <h3>Project Gutenberg</h3>
+
+                    <p>The source for our novels has some important metadata already.  This includes the author, title, language,
+                        copyright status, and a convenient ID numbering system, and can be trusted to be generally reliable.  </p>
+
+                    <p>The metadata on Project Gutenberg is stored in a single giant RDF file.  To handle this rather difficult file type,
+                        we used the <a href="https://github.com/c-w/gutenberg">gutenberg</a>  module.  Processing can take several hours,
+                        but it only needs to be done once on the machine that acquires the metadata.
+
+                    <p>Unfortunately, Project Gutenberg doesn't provide important metadata like the publication date, so we need to look elsewhere.
+                    But the author and title are important for looking up books in other databases.  </p>
+
+                    <h3>Wikidata</h3>
+
+                    <p>Using the <a href="https://github.com/wikimedia/pywikibot">pywikibot</a> module
+                        and given a unique page ID, one can fairly simply access the information
+                        for that page.  </p>
+
+                    <p>The only catch is that if some desired information has its own Wikidata
+                        page, you get its page ID back, not the name.
+                        This means you have to either match the ID to the page title or go look up the name from Wikidata.  </p>
+
+                    <p>The main issue with Wikidata is that although it contains <a href="https://www.wikidata.org/wiki/Q18614236">many</a>
+                        <a href="https://www.wikidata.org/wiki/Q15613810">random</a>
+                        <a href="https://www.wikidata.org/wiki/Q970550">things</a>,
+                        it doesn't contain many of the more obscure books.  Unfortunately, working with the Library of Congress and WorldCat API's was difficult,
+                        so we were unable to incorporate them into our metadata acquisition before the deadline.  However, there are some tricks to patch up those holes: </p>
+
+                    <h3>From the Text</h3>
+
+                    <p>There are a couple things that can be extracted from the text.  For
+                        example, most books have a copyright statement that looks like
+                        <code>COPYRIGHT. 1845</code>.  Using a regular expression, it's possible to get a lot of publication dates from the copyright statements.  </p>
+
+                    <p>One can also usually be fairly sure that an author named "Mary Istabal" is probably female.  Using the
+                        <a href="https://pypi.org/project/gender-guesser/">gender-guesser</a> module,
+                        we automated this process for cases where we couldn't find the author on Wikidata.  </p>
+
+                    <h2>Generating the Metadata</h2>
+
+                    <p>Because some metadata is needed to filter out the books, we decided to generate the corpus and
+                        metadata at the same time. <br />
+                        <a href="/info/web_scraping">(Read more about generating the corpus here.)</a>  </p>
+
+                    <p>To generate the corpus, we loop through every single Gutenberg ID number from zero to 70,000.
+                        With each ID number, the book is first tested to see if it meets our requirements.
+                        Then the metadata is acquired and written to a CSV file.  </p>
+
+                    <p>In the process of generating the corpus, we found that we had more than enough novels.
+                        So greater emphasis was put on ensuring that included books were valid novels, even if it led to the exclusion of some legitimate novels.
+                        We checked novels for </p>
+
+                    <ul>
+                        <li>Language and copyright status  using the gutenberg module</li>
+                        <li>Certain keywords in the Gutenberg-defined subjects that indicated nonfiction or periodicals, like <code>correspondence</code>.
+                            All novels had to contain the word <code>fiction</code> in their subject categories.  </li>
+                        <li>Publication dates between 1770 and 1922</li>
+                        <li>Certain phrases in the titles like <code>Index of the Project Gutenberg Works of</code>...</li>
+                        <li>Indications that the text was a translation, like the presence of the string <code>Translator:</code> in the text</li>
+                        <li>The length of the text: all novels had to be between 140,000 and
+                            <a href="http://www.guinnessworldrecords.com/world-records/longest-novel">9,609,000</a> characters.  </li>
+                    </ul>
+
+                    <p>For the methods that actually acquired the metadata, we would first try to get metadata from the most reliable
+                        source (in this case, the book itself), and if that failed we would try every method from most reliable to least reliable in turn, before giving up.
+                        (For example, if the Library of Congress metadata acquisition was implemented, it would take first precedence).  </p>
+
+                    <p>With a good computer, it is possible to go through all the books from
+                        Project Gutenberg and generate a corpus with metadata in several hours.
+                    </p>
+
+                    <h2>Future Plans</h2>
+
+                    <p>In addition to fixing bugs, future contributors may look into restructuring the code in the manner described above in order to improve its efficiency.
+                        Integrating the WorldCat and Library of Congress API's would also give a greater breadth of reliable information,
+                        allowing for an increase in the size of the corpus without compromising quality.  Other ventures could include looking to include more types of metadata:
+                        the author's country of origin, or the age of the author when the novel was written, for more diverse analyses.  </p>
+
+                    <p>We hope that our first effort may provide a valuable starting point for others to build off of.  </p>
+
+                    <p><a href="https://github.com/dhmit/gender_novels/blob/master/gender_novels/corpus_gen.py">Check out the code on GitHub</a>.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
