@@ -7,6 +7,10 @@ h1, h2, h3 {
     text-align: center;
 }
 
+h4{
+    text-align: center;
+}
+
 h2, p {
     border-width: 100px;
     border-color: #ffffff;
@@ -36,6 +40,8 @@ div.row-2 {
 }
 div {
     font-family: "Sorts Mill Goudy";
+    padding: 5px;
+
 }
 
 div.main {
@@ -64,8 +70,14 @@ span {
 /* Custom classes */
 
 .header {
-    background-color: #99BC78;
+    /*background-color: #99BC78;*/
+    /*padding: 60px;*/
+  text-align: center;
+  /*background: #1abc9c;*/
+  /*color: white;*/
+  font-size: 1000px;
 }
+
 
 .header-text {
     color: black;
@@ -86,16 +98,18 @@ span {
 /* Navbar */
 
 .header-nav {
-    background-color: #FCF5E9;
-    margin-bottom: -1rem;
+    background-color: #99BC78;
+    margin-bottom: 3rem;
 }
 
 .nav-link {
     color: black !important;
+    font-size: x-large;
 }
 
 a:hover {
-    color: #99BC78 !important;
+    /*color: #99BC78 !important;*/
+    color: #FCF5E9 !important;
 }
 
 /* Topic content */
