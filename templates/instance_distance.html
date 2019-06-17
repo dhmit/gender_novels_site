@@ -9,13 +9,7 @@
 
 {% block content %}
     <!-- Page content -->
-    <div class="container-fluid content">
-        <div class="row justify-content-start">
-            <div class="col-2">
-            </div>
-            <div class="col-8">
-                <div class="topic-content">
-                   <h1>Male/Female Instance Distance Analysis</h1>
+    <h1>Male/Female Instance Distance Analysis</h1>
 
                     <p>The code used for this analysis can be found in <a href="https://github.com/dhmit/gender_novels/blob/master/gender_novels/analysis/instance_distance_analysis.py">instance_distance_analysis.py</a>.</p>
                     <p>The raw analysis returns a dictionary with each novel mapped to an array of 3 lists:</p>
@@ -131,10 +125,6 @@
                         are far smaller than the highest female instance distance. The top 10 median male instance distances are in the range of
                         30-45, while the top 10 median female instance distances are in the range of 5091-19713. This may indicate that even the female-centric novels still have a male
                         presence, while male-centric novels exclude female characters to a greater degree.</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
         makeBarChart([{date:'1800s', frequency:12.36},
             {date:'1810s', frequency:13.83},

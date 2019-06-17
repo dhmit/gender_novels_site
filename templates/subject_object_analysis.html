@@ -11,12 +11,7 @@
 
 {% block content %}
     <!-- Page content -->
-    <div class="container-fluid content">
-        <div class="row justify-content-start">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="topic-content">
-                    <h1>Basic Subject vs Object Pronoun Frequency Analysis</h1>
+    <h1>Basic Subject vs Object Pronoun Frequency Analysis</h1>
                         <p><strong>
                             This markdown file contains data from an analysis of feminine and masculine subject pronouns vs
                             object pronouns.
@@ -146,10 +141,6 @@
                                 likely due to just the frequency of male vs female pronoun use in general as observed in an
                                 earlier analysis (see <a href="/info/pronoun_frequency_analysis">Pronoun Frequency</a>).
                             </p>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
         makePieChart([{name: "Female: 24%", val: 24, color:'#BDE894'}, {name: "Male: 76%", val: 76, color:'#FFD1FE'}], '#svg_6');
         makePieChart([{name: "Female", val: 43, color:'#BDE894'}, {name: "Male", val: 57, color:'#FFD1FE'}], '#svg_7');

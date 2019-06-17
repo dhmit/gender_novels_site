@@ -87,8 +87,6 @@
                                     class="dropdown-link">Copyright</span></a>
                             <a class="nav-link" href="/info/corpus_notes"><span
                                     class="dropdown-link">Notes</span></a>
-                            <a class="nav-link" href="/info/install_gutenberg"><span
-                                    class="dropdown-link">Install Gutenberg</span></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -120,7 +118,17 @@
     <!-- Unique page content -->
     <div class="main">
         <br>
-        {% block content %}{% endblock content %}
+    <div class="container-fluid content">
+        <div class="row justify-content-start">
+            <div class="col-12
+                        col-md-8 offset-md-2
+                        ">
+                <div class="topic-content">
+                   {% block content %}{% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- Footer -->
