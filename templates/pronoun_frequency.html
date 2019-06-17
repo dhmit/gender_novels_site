@@ -2,6 +2,7 @@
 
 {% block extra_header %}
     <script src={{ url_for('static', filename = 'pie_chart.js') }}></script>
+    <script src={{ url_for('static', filename='bar_chart.js') }}></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 {% endblock extra_header %}
 
@@ -24,7 +25,30 @@
                             pronouns that are subject pronouns and the proportion of male pronouns that are subject
                             pronouns were analyzed. </p>
 
-                        <h2>Analysis #1 - Frequency of Gendered Pronouns</h2>
+                    <ul class="nav nav-tabs flex-s-column nav-fill"
+                    style="border-color:#FCF5E9;">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#gendered_pronouns"
+                               style="background-color:#F9EBD3;border-color:#FCF5E9">Gendered
+                                Pronouns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#subject_pronouns"
+                               style="background-color:#F9EBD3;border-color:#FCF5E9">Gendered Subject
+                                Pronouns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#subject_proportion"
+                               style="background-color:#F9EBD3;border-color:#FCF5E9">Subject
+                                Pronouns Among Genders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#discussion"
+                               style="background-color:#F9EBD3;border-color:#FCF5E9">Discussion</a>
+                        </li>
+                    </ul>
+
+                        <h2 id="gendered_pronouns">Analysis #1 - Frequency of Gendered Pronouns</h2>
                             <p>
                                 Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
                                 the total number of pronouns in a given novel are female for each novel in the Gutenberg
@@ -34,8 +58,7 @@
 
                                 <h4>Overall</h4>
                                     <p>
-                                        Below shows the average portion of the total number of pronouns in a given novel that are
-                                        of each type
+                                        Frequency of gendered pronouns:
                                     </p>
                                         <ul>
                                             <li>Female pronouns: 0.325</li>
@@ -49,8 +72,7 @@
 
                                 <h4>By Author Gender</h4>
                                     <p>
-                                        Below shows the average portion of the total number of pronouns in a given novel that are
-                                        female sorted by author gender.
+                                        Frequency of gendered pronouns, sorted by author gender:
                                     </p>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -70,19 +92,10 @@
                                     </p>
 
                                 <h4>By Date</h4>
-                                    <ul>
-                                        <li>To 1810: 0.35</li>
-                                        <li>1810 to 1819: 0.37</li>
-                                        <li>1820 to 1829: 0.23</li>
-                                        <li>1830 to 1839: 0.23</li>
-                                        <li>1840 to 1849: 0.28</li>
-                                        <li>1850 to 1859: 0.35</li>
-                                        <li>1860 to 1869: 0.38</li>
-                                        <li>1870 to 1879: 0.40</li>
-                                        <li>1880 to 1889: 0.35</li>
-                                        <li>1890 to 1899: <code>NaN</code></li>
-                                        <li>1900 on: 0.33</li>
-                                    </ul>
+
+                                <div>
+                                    <svg width="700" height="500" id = "svg_8"></svg>
+                                </div>
 
                                 <h4>By Publication Location</h4>
                                     <ul>
@@ -95,7 +108,8 @@
                                         publication location.
                                     </p>
 
-                        <h2>Analysis #2 - Frequency of Gendered Subject Pronouns</h2>
+                        <h2 id="subject_pronouns">Analysis #2 - Frequency of Gendered Subject
+                            Pronouns</h2>
                             <p>
                                 Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
                                 the total number of subject pronouns in a given novel that are female for each novel in the
@@ -106,8 +120,7 @@
 
                                 <h4>Overall</h4>
                                     <p>
-                                        Below shows the average portion of the total number of subject pronouns in a given novel
-                                        that are of each type
+                                        Frequency of gendered pronouns among subject pronouns:
                                     </p>
                                         <ul>
                                             <li>Female pronouns: 0.325</li>
@@ -115,7 +128,8 @@
                                         </ul>
                                     <svg width="300" height="200" id="svg_3"> </svg>
                                     <p>
-                                        On average, a novel in corpus contains 32.5% female pronouns and 67.5% male pronouns. This
+                                        On average, a novel in corpus contains 32.5% female
+                                        subject pronouns and 67.5% male subject pronouns. This
                                         result has not been tested for statistical significance.
                                     </p>
                                     <p>
@@ -124,7 +138,8 @@
                                     </p>
 
                                 <h4>By Author Gender</h4>
-                                    <p>Below shows the average portion of the total number of pronouns in a given novel that are female sorted by author gender</p>
+                                    <p>Frequency of female subject pronouns sorted by
+                                        author gender:</p>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <p>Male author: 0.24</p>
@@ -137,8 +152,10 @@
                                         </div>
                                     </div>
                                     <p>
-                                        On average, a novel by a male author in the corpus contains 24.0% female pronouns and a novel
-                                        by a female author contains 52.0% female pronouns. This difference was shown to be statistically
+                                        On average, a novel by a male author in the corpus
+                                        contains 24.0% female subject pronouns and a novel
+                                        by a female author contains 52.0% female subject pronouns.
+                                        This difference was shown to be statistically
                                         significant at the p = 0.05 level with an independent t test.
                                     </p>
                                     <p>
@@ -149,19 +166,9 @@
                                     </p>
 
                                 <h4>By Date</h4>
-                                    <ul>
-                                        <li>To 1810: 0.34</li>
-                                        <li>1810 to 1819: 0.37</li>
-                                        <li>1820 to 1829: 0.22</li>
-                                        <li>1830 to 1839: 0.21</li>
-                                        <li>1840 to 1849: 0.28</li>
-                                        <li>1850 to 1859: 0.34</li>
-                                        <li>1860 to 1869: 0.37</li>
-                                        <li>1870 to 1879: 0.40</li>
-                                        <li>1880 to 1889: 0.34</li>
-                                        <li>1890 to 1899: <code>NaN</code></li>
-                                        <li>1900 on: 0.32</li>
-                                    </ul>
+                                    <div>
+                                        <svg width="700" height="500" id = "svg_9"></svg>
+                                    </div>
 
                                 <h4>By Publication Location</h4>
                                     <ul>
@@ -174,7 +181,8 @@
                                         or publication location.
                                     </p>
 
-                        <h2>Analysis #3 - Frequency of Each Type of Gendered Pronoun that are Subject Pronouns</h2>
+                        <h2 id="subject_proportion">Analysis #3 - Frequency of Subject Pronouns
+                            among Gendered Pronouns</h2>
                             <p>
                                 Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
                                 the total number of pronouns of a given gender that are subject pronouns for each novel in
@@ -188,8 +196,8 @@
 
                                 <h4>Overall</h4>
                                     <p>
-                                        Below are the average proportion of the pronouns of the given gender that are subject
-                                        pronouns.
+                                        Portion of gendered pronouns that are
+                                        subject pronouns:
                                     </p>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -210,8 +218,7 @@
 
                             <h3>3a - Female Pronouns</h3>
                                 <p>
-                                    The following are the average proportions of female pronouns in a given novel that are
-                                    subject pronouns.
+                                    Portion of female pronouns that are subject pronouns:
                                 </p>
 
                                 <h4>By Author Gender</h4>
@@ -224,19 +231,9 @@
                                     </p>
 
                                 <h4>By Publication Date</h4>
-                                    <ul>
-                                        <li>Before 1810: 0.41</li>
-                                        <li>1810 to 1819: 0.40</li>
-                                        <li>1820 to 1829: 0.37</li>
-                                        <li>1830 to 1839: 0.39</li>
-                                        <li>1840 to 1849:  0.41</li>
-                                        <li>1850 to 1859: 0.43</li>
-                                        <li>1860 to 1869: 0.43</li>
-                                        <li>1870 to 1879: 0.45</li>
-                                        <li>1880 to 1889: 0.46</li>
-                                        <li>1890 to 1899: <code>NaN</code></li>
-                                        <li>1900 to 1922: 0.48</li>
-                                    </ul>
+                                    <div>
+                                        <svg width="700" height="500" id = "svg_10"></svg>
+                                    </div>
 
                                 <h4>By Publication Location</h4>
                                     <ul>
@@ -248,30 +245,19 @@
 
                             <h3>3b - Male Pronouns</h3>
                                 <p>
-                                    The following are the average proportions of male pronouns in a given novel that are
-                                    subject pronouns.
+                                    Portion of male pronouns that are subject pronouns:
                                 </p>
 
-                                <h4>Author Gender</h4>
+                                <h4>By Author Gender</h4>
                                     <ul>
                                         <li>Male: 0.75</li>
                                         <li>Female: 0.73</li>
                                     </ul>
 
                                 <h4>By Publication Date</h4>
-                                    <ul>
-                                        <li>Before 1810: 0.71</li>
-                                        <li>1810 to 1819: 0.70</li>
-                                        <li>1820 to 1829: 0.72</li>
-                                        <li>1830 to 1839: 0.73</li>
-                                        <li>1840 to 1849: 0.70</li>
-                                        <li>1850 to 1859: 0.71</li>
-                                        <li>1860 to 1869: 0.71</li>
-                                        <li>1870 to 1879: 0.72</li>
-                                        <li>1880 to 1889: 0.73</li>
-                                        <li>1890 to 1899: <code>NaN</code></li>
-                                        <li>1900 to 1922': 0.75</li>
-                                    </ul>
+                                    <div>
+                                        <svg width="700" height="500" id = "svg_11"></svg>
+                                    </div>
 
                                 <h4>By Publication Location</h4>
                                     <ul>
@@ -281,7 +267,7 @@
                                     </ul>
                                     <p>No patterns or significant differences were found for any of these categories.</p>
 
-                        <h2>Discussion of Results</h2>
+                        <h2 id="discussion">Discussion of Results</h2>
                             <p>Analysis #1 shows that female authors use female pronouns more often than male authors. </p>
                             <p>
                                 Analysis #2 shows that female authors use female subject pronouns more often than male
@@ -323,13 +309,66 @@
         </div>
     </div>
     <script>
-        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0')
-        makePieChart([{name: 'Female', val: 25, color: '#BDE894'}, {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1')
-        makePieChart([{name: 'Female', val: 53, color: '#BDE894'}, {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2')
-        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'}, {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3')
-        makePieChart([{name: 'Female', val: 24, color: '#BDE894'}, {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4')
-        makePieChart([{name: 'Female', val: 52, color: '#BDE894'}, {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5')
-        makePieChart([{name: 'Subject', val: 74, color: '#BDE894'}, {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6')
-        makePieChart([{name: 'Subject', val: 47, color: '#BDE894'}, {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7')
+        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'},
+            {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_0');
+        makePieChart([{name: 'Female', val: 25, color: '#BDE894'},
+            {name: 'Male', val: 75, color: '#FFD1FE'}], '#svg_1');
+        makePieChart([{name: 'Female', val: 53, color: '#BDE894'},
+            {name: 'Male', val: 47, color: '#FFD1FE'}], '#svg_2');
+        makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'},
+            {name: 'Male', val: 67.5, color: '#FFD1FE'}], '#svg_3');
+        makePieChart([{name: 'Female', val: 24, color: '#BDE894'},
+            {name: 'Male', val: 56, color: '#FFD1FE'}], '#svg_4');
+        makePieChart([{name: 'Female', val: 52, color: '#BDE894'},
+            {name: 'Male', val: 48, color: '#FFD1FE'}], '#svg_5');
+        makePieChart([{name: 'Subject', val: 74, color: '#BDE894'},
+            {name: 'Object', val: 26, color: '#FFD1FE'}], '#svg_6');
+        makePieChart([{name: 'Subject', val: 47, color: '#BDE894'},
+            {name: 'Object', val: 53, color: '#FFD1FE'}], '#svg_7');
+
+        makeBarChart([{date:'1800s', frequency:0.35},
+                        {date:'1810s', frequency:0.37},
+                        {date:'1820s', frequency:0.23},
+                        {date:'1830s', frequency:0.23},
+                        {date:'1840s', frequency:0.28},
+                        {date:'1850s', frequency:0.35},
+                        {date:'1860s', frequency:0.38},
+                        {date:'1870s', frequency:0.40},
+                        {date:'1880s', frequency:0.35},
+                        {date:'1890s', frequency:0},
+                        {date:'1900s', frequency:0.33},], '#svg_8');
+        makeBarChart([{date:'1800s', frequency:0.34},
+                {date:'1810s', frequency:0.37},
+                {date:'1820s', frequency:0.22},
+                {date:'1830s', frequency:0.21},
+                {date:'1840s', frequency:0.28},
+                {date:'1850s', frequency:0.34},
+                {date:'1860s', frequency:0.37},
+                {date:'1870s', frequency:0.40},
+                {date:'1880s', frequency:0.34},
+                {date:'1890s', frequency:0},
+                {date:'1900s', frequency:0.32},], '#svg_9');
+        makeBarChart([{date:'1800s', frequency:0.41},
+                {date:'1810s', frequency:0.40},
+                {date:'1820s', frequency:0.37},
+                {date:'1830s', frequency:0.39},
+                {date:'1840s', frequency:0.41},
+                {date:'1850s', frequency:0.43},
+                {date:'1860s', frequency:0.43},
+                {date:'1870s', frequency:0.45},
+                {date:'1880s', frequency:0.46},
+                {date:'1890s', frequency:0},
+                {date:'1900s', frequency:0.48},], '#svg_10');
+        makeBarChart([{date:'1800s', frequency:0.71},
+                {date:'1810s', frequency:0.70},
+                {date:'1820s', frequency:0.72},
+                {date:'1830s', frequency:0.73},
+                {date:'1840s', frequency:0.70},
+                {date:'1850s', frequency:0.71},
+                {date:'1860s', frequency:0.71},
+                {date:'1870s', frequency:0.72},
+                {date:'1880s', frequency:0.73},
+                {date:'1890s', frequency:0},
+                {date:'1900s', frequency:0.75},], '#svg_11');
     </script>
 {% endblock %}
