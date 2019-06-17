@@ -12,135 +12,136 @@
 {% block content %}
     <!-- Page content -->
     <h1>Basic Subject vs Object Pronoun Frequency Analysis</h1>
-                        <p><strong>
-                            This markdown file contains data from an analysis of feminine and masculine subject pronouns vs
-                            object pronouns.
-                        </strong></p>
-                        <p>
-                            The code used for this analysis can be found in gender_pronoun_freq_analysis.py
-                        </p>
-                        <p>
-                            Two analyses were conducted on this subject. The first compares how often each gender's pronouns
-                            were used in the subject within their gender, i.e., what portion of female pronouns are subject
-                            pronouns and what portion of male pronouns are subject pronouns. The second analysis compares the
-                            frequency of masculine and feminine pronouns in subject pronouns, ie, what portion of subject
-                            pronouns are masculine vs feminine.
-                        </p>
+    <p><strong>
+        This markdown file contains data from an analysis of feminine and masculine subject pronouns vs
+        object pronouns.
+    </strong></p>
+    <p>
+        The code used for this analysis can be found in gender_pronoun_freq_analysis.py
+    </p>
+    <p>
+        Two analyses were conducted on this subject. The first compares how often each gender's pronouns
+        were used in the subject within their gender, i.e., what portion of female pronouns are subject
+        pronouns and what portion of male pronouns are subject pronouns. The second analysis compares the
+        frequency of masculine and feminine pronouns in subject pronouns, ie, what portion of subject
+        pronouns are masculine vs feminine.
+    </p>
 
-                        <h2>First Analysis</h2>
-                            <p>
-                                This analysis first separated the pronouns into masculine and feminine pronouns and compared
-                                frequencies within these categories.
-                            </p>
+    <h2>First Analysis</h2>
+    <p>
+        This analysis first separated the pronouns into masculine and feminine pronouns and compared
+        frequencies within these categories.
+    </p>
 
-                            <h3>Overall</h3>
-                                <p>
-                                    These frequencies are the portion of pronouns of a certain gender that are subject pronouns.
-                                    Thus, on average, approximately 72% of masculine pronouns in a given novel are subject pronouns
-                                    while approximately 45% of feminine pronouns are subject pronouns.
-                                </p>
-                                <div class="row">
-                                    <div class='col-md-6'>
-                                        <p>Male: 0.72</p>
-                                        <!-- make graphic resize based on size of screen -->
-                                        <svg width="300" height="200" id="svg_0"> </svg>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>Female: 0.45</p>
-                                        <svg width="300" height="200" id="svg_1"> </svg>
-                                    </div>
-                                </div>
+    <h3>Overall</h3>
+    <p>
+        These frequencies are the portion of pronouns of a certain gender that are subject pronouns.
+        Thus, on average, approximately 72% of masculine pronouns in a given novel are subject pronouns
+        while approximately 45% of feminine pronouns are subject pronouns.
+    </p>
+    <div class="row">
+        <div class='col-md-6'>
+            <p>Male: 0.72</p>
+            <!-- make graphic resize based on size of screen -->
+            <svg width="300" height="200" id="svg_0"> </svg>
+        </div>
+        <div class="col-md-6">
+            <p>Female: 0.45</p>
+            <svg width="300" height="200" id="svg_1"> </svg>
+        </div>
+    </div>
 
-                            <h3>Binned</h3>
-                                <p>
-                                    The following are averages of the same frequency but binned over author gender, date published,
-                                    and location.
-                                </p>
+    <h3>Binned</h3>
+    <p>
+        The following are averages of the same frequency but binned over author gender, date published,
+        and location.
+    </p>
 
-                                <h4>Female pronouns:</h4>
-                                    <p>
-                                        The following are frequencies of female pronouns that are subject pronouns.
-                                    </p>
+    <h4>Female pronouns:</h4>
+    <p>
+        The following are frequencies of female pronouns that are subject pronouns.
+    </p>
 
-                                    <p>By author gender: </p>
-                                    <p>Male author: 0.44</p>
-                                    <p>Female author: 0.46</p>
+    <p>By author gender: </p>
+    <p>Male author: 0.44</p>
+    <p>Female author: 0.46</p>
 
-                                    <p>By date: </p>
-                                    <svg width="1000" height="500" id = "svg_2"></svg>
+    <p>By date: </p>
+    <svg width="1000" height="500" id = "svg_2"></svg>
 
-                                    <p>By location:</p>
-                                    <p>England: 0.44 </p>
-                                    <p>United States: 0.45 </p>
-                                    <p>Other: 0.43</p>
+    <p>By location:</p>
+    <p>England: 0.44 </p>
+    <p>United States: 0.45 </p>
+    <p>Other: 0.43</p>
 
-                                <h4>Male Pronouns</h4>
-                                    <p>By author gender:</p>
-                                    <p>Male author: 0.73</p>
-                                    <p>Female author: 0.72</p>
+    <h4>Male Pronouns</h4>
+    <p>By author gender:</p>
+    <p>Male author: 0.73</p>
+    <p>Female author: 0.72</p>
 
-                                    <p>By date:</p>
-                                    <svg width="1000" height="500" id = "svg_3"></svg>
+    <p>By date:</p>
+    <svg width="1000" height="500" id = "svg_3"></svg>
 
-                                    <p>By location:</p>
-                                    <p>England: 0.72</p>
-                                    <p>US: 0.73</p>
-                                    <p>Other: 0.72</p>
+    <p>By location:</p>
+    <p>England: 0.72</p>
+    <p>US: 0.73</p>
+    <p>Other: 0.72</p>
 
-                            <h3>Thoughts</h3>
-                                <p>
-                                    We noticed no trends in the binning for this analysis. It did seem notable that about 72% of all
-                                    male pronouns were subject pronouns while only about 45% of female pronouns were subject
-                                    pronouns.
-                                </p>
+    <h3>Thoughts</h3>
+    <p>
+        We noticed no trends in the binning for this analysis. It did seem notable that about 72% of all
+        male pronouns were subject pronouns while only about 45% of female pronouns were subject
+        pronouns.
+    </p>
 
-                        <h2>Analysis 2</h2>
-                            <p>
-                                This analysis looked at the percentage of subject pronouns that were male verses female. The
-                                following frequencies are the portion of subject pronouns that are female.
-                            </p>
+    <h2>Analysis 2</h2>
+    <p>
+        This analysis looked at the percentage of subject pronouns that were male verses female. The
+        following frequencies are the portion of subject pronouns that are female.
+    </p>
 
-                            <h3>Overall</h3>
-                                <p>Overall: 0.32</p>
-                                <p>Thus, on average, about 32% of the subject pronouns in a given novel were feminine.</p>
+    <h3>Overall</h3>
+    <p>Overall: 0.32</p>
+    <p>Thus, on average, about 32% of the subject pronouns in a given novel were feminine.</p>
 
-                            <h3>Binned</h3>
+    <h3>Binned</h3>
 
-                                <h4>By author gender:</h4>
-                                    <div class="row">
-                                        <div class='col-md-6'>
-                                            <p>Male author: 0.24</p>
-                                            <!-- make graphic resize based on size of screen -->
-                                            <svg width="300" height="200" id="svg_6"> </svg>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Female author: 0.43</p>
-                                            <svg width="300" height="200" id="svg_7"> </svg>
-                                        </div>
-                                    </div>
+    <h4>By author gender:</h4>
+    <div class="row">
+        <div class='col-md-6'>
+            <p>Male author: 0.24</p>
+            <!-- make graphic resize based on size of screen -->
+            <svg width="300" height="200" id="svg_6"> </svg>
+        </div>
+        <div class="col-md-6">
+            <p>Female author: 0.43</p>
+            <svg width="300" height="200" id="svg_7"> </svg>
+        </div>
+    </div>
 
-                                <h4>By date:</h4>
-                                <svg width="1000" height="500" id = "svg_4"></svg>
+    <h4>By date:</h4>
+    <svg width="1000" height="500" id = "svg_4"></svg>
 
 
-                                <h4>By location:</h4>
-                                    <p>England: 0.30</p>
-                                    <p>US: 0.34</p>
-                                    <p>Other: 0.30</p>
+    <h4>By location:</h4>
+    <p>England: 0.30</p>
+    <p>US: 0.34</p>
+    <p>Other: 0.30</p>
 
-                            <h3>Thoughts</h3>
-                                <p>
-                                    For this analysis, we found the overall comparison and the comparison by author gender most
-                                    noteworthy. We noticed no trends in the date binning, though there is a strange deviancy from
-                                    the norm in the 1830's. We noticed no trend based on location.
-                                </p>
+    <h3>Thoughts</h3>
+    <p>
+        For this analysis, we found the overall comparison and the comparison by author gender most
+        noteworthy. We noticed no trends in the date binning, though there is a strange deviancy from
+        the norm in the 1830's. We noticed no trend based on location.
+    </p>
 
-                        <h2>Overall Thoughts</h2>
-                            <p>
-                                Analysis #1 is probably the most useful of the two. The results observed in analysis #2 are
-                                likely due to just the frequency of male vs female pronoun use in general as observed in an
-                                earlier analysis (see <a href="/info/pronoun_frequency_analysis">Pronoun Frequency</a>).
-                            </p>
+    <h2>Overall Thoughts</h2>
+    <p>
+        Analysis #1 is probably the most useful of the two. The results observed in analysis #2 are
+        likely due to just the frequency of male vs female pronoun use in general as observed in an
+        earlier analysis (see <a href="/info/pronoun_frequency_analysis">Pronoun Frequency</a>).
+    </p>
+
     <script>
         makePieChart([{name: "Female: 24%", val: 24, color:'#BDE894'}, {name: "Male: 76%", val: 76, color:'#FFD1FE'}], '#svg_6');
         makePieChart([{name: "Female", val: 43, color:'#BDE894'}, {name: "Male", val: 57, color:'#FFD1FE'}], '#svg_7');

@@ -11,120 +11,121 @@
     <!-- Page content -->
     <h1>Male/Female Instance Distance Analysis</h1>
 
-                    <p>The code used for this analysis can be found in <a href="https://github.com/dhmit/gender_novels/blob/master/gender_novels/analysis/instance_distance_analysis.py">instance_distance_analysis.py</a>.</p>
-                    <p>The raw analysis returns a dictionary with each novel mapped to an array of 3 lists:</p>
-                    <ul>
-                        <li>Median, mean, minimum, and maximum distances between male pronoun instances.</li>
-                        <li>Median, mean, minimum, and maximum distances between female pronoun instances.</li>
-                        <li>For each of the above stats, the difference between male and female values (male stat – female
-                            stat for all stats). <em>Positive difference values</em> mean there
-                            is a <em>larger distance between male pronouns than female
-                                pronouns</em> and therefore <em>higher female frequency</em>.</li>
-                    </ul>
-                    <p>For example:</p>
-                    <blockquote>
-                        <p>A median female instance value of 14.0 vs a median male instance distance value of 10.0 means that female instances
-                            tend to occur every 14 words in the novels versus male instances occurring every 9 words in the novel. This would indicate
-                            a greater male presence in the novel.</p>
-                        <p>A mean difference value of 4.0 means that on average, the distance between male instances is 4 words longer than female
-                            instances.</p>
-                    </blockquote>
+    <p>The code used for this analysis can be found in <a href="https://github.com/dhmit/gender_novels/blob/master/gender_novels/analysis/instance_distance_analysis.py">instance_distance_analysis.py</a>.</p>
+    <p>The raw analysis returns a dictionary with each novel mapped to an array of 3 lists:</p>
+    <ul>
+        <li>Median, mean, minimum, and maximum distances between male pronoun instances.</li>
+        <li>Median, mean, minimum, and maximum distances between female pronoun instances.</li>
+        <li>For each of the above stats, the difference between male and female values (male stat – female
+            stat for all stats). <em>Positive difference values</em> mean there
+            is a <em>larger distance between male pronouns than female
+                pronouns</em> and therefore <em>higher female frequency</em>.</li>
+    </ul>
+    <p>For example:</p>
+    <blockquote>
+        <p>A median female instance value of 14.0 vs a median male instance distance value of 10.0 means that female instances
+            tend to occur every 14 words in the novels versus male instances occurring every 9 words in the novel. This would indicate
+            a greater male presence in the novel.</p>
+        <p>A mean difference value of 4.0 means that on average, the distance between male instances is 4 words longer than female
+            instances.</p>
+    </blockquote>
 
-                    <h2>By Author Gender:</h2>
+    <h2>By Author Gender:</h2>
 
-                    <h4>Average Median Male Instance Distance:</h4>
+    <h4>Average Median Male Instance Distance:</h4>
 
-                    <p>Male Authors: 12.61</p>
-                    <p>Female Authors: 13.79</p>
+    <p>Male Authors: 12.61</p>
+    <p>Female Authors: 13.79</p>
 
-                    <h4>Average Median Female Instance Distance:</h4>
+    <h4>Average Median Female Instance Distance:</h4>
 
-                    <p>Male Authors: 72.30</p>
-                    <p>Female Authors: 30.17</p>
-                    <p>p-value = 0.0184</p>
-                    <p><img src="/static/markdowns/images/median_female_instance_distance_by_author_gender.png" alt="" /></p>
+    <p>Male Authors: 72.30</p>
+    <p>Female Authors: 30.17</p>
+    <p>p-value = 0.0184</p>
+    <p><img src="/static/markdowns/images/median_female_instance_distance_by_author_gender.png" alt="" /></p>
 
-                    <h2>By Decade:</h2>
+    <h2>By Decade:</h2>
 
-                    <p><strong>Average median female instance distance in each decade</strong></p>
+    <p><strong>Average median female instance distance in each decade</strong></p>
 
 
-                    <div>
-                        <svg width="1000" height="500" id = "svg_0"></svg>
-                    </div>
+    <div>
+        <svg width="1000" height="500" id = "svg_0"></svg>
+    </div>
 
-                    <p>p-value = 0.942</p>
-                    <p><img src="/static/markdowns/images/median_female_instance_distance_by_date.png" alt="" /></p>
+    <p>p-value = 0.942</p>
+    <p><img src="/static/markdowns/images/median_female_instance_distance_by_date.png" alt="" /></p>
 
-                    <h2>By Location:</h2>
+    <h2>By Location:</h2>
 
-                    <p><strong>Average median female instance distance in each location</strong></p>
-                    <p>Published in England : 63.04</p>
-                    <p>Published in US : 20.59</p>
-                    <p>Published in other country : 62.02</p>
-                    <p>p-value = 0.317</p>
-                    <p><img src="/static/markdowns/images/median_female_instance_distance_by_location.png" alt="" /></p>
+    <p><strong>Average median female instance distance in each location</strong></p>
+    <p>Published in England : 63.04</p>
+    <p>Published in US : 20.59</p>
+    <p>Published in other country : 62.02</p>
+    <p>p-value = 0.317</p>
+    <p><img src="/static/markdowns/images/median_female_instance_distance_by_location.png" alt="" /></p>
 
-                    <h2>Novels With Greatest Instance Distances</h2>
+    <h2>Novels With Greatest Instance Distances</h2>
 
-                    <h4>Top 10 novels with greatest median female instance distances:</h4>
+    <h4>Top 10 novels with greatest median female instance distances:</h4>
 
-                    <ol>
-                        <li><p><em>Don Hale with the Flying Squadron</em> by William Crispin Sheppard <br />
-                            Median female instance distance: 19713.5</p></li>
-                        <li><p><em>The Head of Kay's</em> by Pelham Grenville <br />
-                            Median female instance distance: 15962</p></li>
-                        <li><p><em>Teddy and Carrots: Two Merchants of Newpaper Row</em> James Otis <br />
-                            Median female instance distance: 9906</p></li>
-                        <li><p><em>The Outdoor Chums in the Big Woods</em> by Quincy Allen <br />
-                            Median female instance distance: 9804</p></li>
-                        <li><p><em>The Boy Scouts at the Canadian Border</em> by John Henry Goldfrap <br />
-                            Median female instance distance: 9507</p></li>
-                        <li><p><em>Our Young Aeroplane Scouts in Germany; or, Winning the Iron Cross</em> by Horace Porter <br />
-                            Median female instance distance: 8671</p></li>
-                        <li><p><em>The Keepers of the Trail: A Story of the Great Woods</em> by Joseph Alexander
-                            Median female instance distance: 7551.5</p></li>
-                        <li><p><em>Storm-Bound; or, A Vacation Among the Snow Drifts</em> by Captain Alan Douglas <br />
-                            Median female instance distance: 6335.5</p></li>
-                        <li><p><em>Tom Slade's Double Dare</em> by Percy Keese Fitzhugh
-                            Median female instance distance: 5654</p></li>
-                        <li><p><em>The Wonder Island Boys: Conquest of the Savages</em> by Roger Thompson Finlay
-                            Median female instance distance: 5091</p></li>
-                    </ol>
+    <ol>
+        <li><p><em>Don Hale with the Flying Squadron</em> by William Crispin Sheppard <br />
+            Median female instance distance: 19713.5</p></li>
+        <li><p><em>The Head of Kay's</em> by Pelham Grenville <br />
+            Median female instance distance: 15962</p></li>
+        <li><p><em>Teddy and Carrots: Two Merchants of Newpaper Row</em> James Otis <br />
+            Median female instance distance: 9906</p></li>
+        <li><p><em>The Outdoor Chums in the Big Woods</em> by Quincy Allen <br />
+            Median female instance distance: 9804</p></li>
+        <li><p><em>The Boy Scouts at the Canadian Border</em> by John Henry Goldfrap <br />
+            Median female instance distance: 9507</p></li>
+        <li><p><em>Our Young Aeroplane Scouts in Germany; or, Winning the Iron Cross</em> by Horace Porter <br />
+            Median female instance distance: 8671</p></li>
+        <li><p><em>The Keepers of the Trail: A Story of the Great Woods</em> by Joseph Alexander
+            Median female instance distance: 7551.5</p></li>
+        <li><p><em>Storm-Bound; or, A Vacation Among the Snow Drifts</em> by Captain Alan Douglas <br />
+            Median female instance distance: 6335.5</p></li>
+        <li><p><em>Tom Slade's Double Dare</em> by Percy Keese Fitzhugh
+            Median female instance distance: 5654</p></li>
+        <li><p><em>The Wonder Island Boys: Conquest of the Savages</em> by Roger Thompson Finlay
+            Median female instance distance: 5091</p></li>
+    </ol>
 
-                    <h4>Top 10 novels with greatest median male instance distances:</h4>
-                    <ol>
-                        <li><p><em>Marjorie's Busy Days</em> by Carolyn Wells <br />
-                            Median male instance distance: 43.5</p></li>
-                        <li><p><em>The Mary Frances Cook Book</em> by Jane Eayre Fryer <br />
-                            Median male instance distance: 39</p></li>
-                        <li><p><em>The Motor Girls on the Coast; or, The Waif From the Sea</em> by Margaret Penrose <br />
-                            Median male instance distance: 36</p></li>
-                        <li><p><em>The Adopting of Rosa Marie</em> by Carroll Watson Rankin <br />
-                            Median male instance distance: 34</p></li>
-                        <li><p><em>Ruth Fielding At College; or, The Missing Examination Papers</em> by Alice B. Emerson <br />
-                            Median male instance distance: 33.5</p></li>
-                        <li><p><em>Mary Jane in New England</em> by Clara Ingram Judson <br />
-                            Median male instance distance: 32</p></li>
-                        <li><p><em>Wanted: A Cook</em> by Alan Dale <br />
-                            Median male instance distance: 32</p></li>
-                        <li><p><em>The Armed Ship America</em> by James Otis <br />
-                            Median male instance distance: 31</p></li>
-                        <li><p><em>The Mary Frances Garden Book; or, Adventures Among the Garden People</em> by Jane Eayre Fryer
-                            Median male instance distance: 31</p></li>
-                        <li><p><em>The Mary Frances Knitting and Crocheting Book</em> by Jane Eayre Fryer
-                            Median male instance distance: 30</p></li>
-                    </ol>
+    <h4>Top 10 novels with greatest median male instance distances:</h4>
+    <ol>
+        <li><p><em>Marjorie's Busy Days</em> by Carolyn Wells <br />
+            Median male instance distance: 43.5</p></li>
+        <li><p><em>The Mary Frances Cook Book</em> by Jane Eayre Fryer <br />
+            Median male instance distance: 39</p></li>
+        <li><p><em>The Motor Girls on the Coast; or, The Waif From the Sea</em> by Margaret Penrose <br />
+            Median male instance distance: 36</p></li>
+        <li><p><em>The Adopting of Rosa Marie</em> by Carroll Watson Rankin <br />
+            Median male instance distance: 34</p></li>
+        <li><p><em>Ruth Fielding At College; or, The Missing Examination Papers</em> by Alice B. Emerson <br />
+            Median male instance distance: 33.5</p></li>
+        <li><p><em>Mary Jane in New England</em> by Clara Ingram Judson <br />
+            Median male instance distance: 32</p></li>
+        <li><p><em>Wanted: A Cook</em> by Alan Dale <br />
+            Median male instance distance: 32</p></li>
+        <li><p><em>The Armed Ship America</em> by James Otis <br />
+            Median male instance distance: 31</p></li>
+        <li><p><em>The Mary Frances Garden Book; or, Adventures Among the Garden People</em> by Jane Eayre Fryer
+            Median male instance distance: 31</p></li>
+        <li><p><em>The Mary Frances Knitting and Crocheting Book</em> by Jane Eayre Fryer
+            Median male instance distance: 30</p></li>
+    </ol>
 
-                    <h2>Thoughts:</h2>
-                    <p>Overall, both male and female authors have greater median female instance distances than male instance distances.
-                        However, there is a significant difference between median female instance distance in novels written by female authors,
-                        and those written by male authors. There is evidently no significant trend with relation to date or location of
-                        publication.</p>
-                    <p>Looking at the list of top-10 novels in each measured category, it is important to note that the highest male instance distances
-                        are far smaller than the highest female instance distance. The top 10 median male instance distances are in the range of
-                        30-45, while the top 10 median female instance distances are in the range of 5091-19713. This may indicate that even the female-centric novels still have a male
-                        presence, while male-centric novels exclude female characters to a greater degree.</p>
+    <h2>Thoughts:</h2>
+    <p>Overall, both male and female authors have greater median female instance distances than male instance distances.
+        However, there is a significant difference between median female instance distance in novels written by female authors,
+        and those written by male authors. There is evidently no significant trend with relation to date or location of
+        publication.</p>
+    <p>Looking at the list of top-10 novels in each measured category, it is important to note that the highest male instance distances
+        are far smaller than the highest female instance distance. The top 10 median male instance distances are in the range of
+        30-45, while the top 10 median female instance distances are in the range of 5091-19713. This may indicate that even the female-centric novels still have a male
+        presence, while male-centric novels exclude female characters to a greater degree.</p>
+
     <script>
         makeBarChart([{date:'1800s', frequency:12.36},
             {date:'1810s', frequency:13.83},
