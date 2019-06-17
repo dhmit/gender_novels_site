@@ -16,7 +16,7 @@ h2, p {
     border-color: #ffffff;
 }
 
-div.topic-content, div.goals, div.image, div.links {
+div.topic-content, div.image, div.links {
     /*text-align: center;*/
     background-color: #ffffff;
 }
@@ -98,18 +98,19 @@ span {
 /* Navbar */
 
 .header-nav {
-    background-color: #99BC78;
+    /*background-color: #99BC78;*/
+    background-color: #34282C;
     margin-bottom: 3rem;
 }
 
 .nav-link {
-    color: black !important;
+    color: white !important;
     font-size: x-large;
 }
 
 a:hover {
-    /*color: #99BC78 !important;*/
-    color: #FCF5E9 !important;
+    color: #99BC78 !important;
+    /*color: #FCF5E9 !important;*/
 }
 
 /* Topic content */
