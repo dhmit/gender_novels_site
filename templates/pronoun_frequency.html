@@ -11,10 +11,13 @@
 
 {% block content %}
     <!-- Page content -->
-    <div class="container-fluid content">
-        <div class="row justify-content-start">
-            <div class="col-2"></div>
-            <div class="col-8">
+{#    <div class="container-fluid content">#}
+{#        <div class="row justify-content-start">#}
+{#            <div class="col-2"></div>#}
+{#                <div class="col-8">#}
+    <div class="container">
+        <div class="row">
+            <div class="col">
                 <div class="topic-content">
                     <h1>Gendered Pronoun Frequency Analyses</h1>
                         <p>
@@ -25,7 +28,12 @@
                             pronouns that are subject pronouns and the proportion of male pronouns that are subject
                             pronouns were analyzed.
                         </p>
-
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="topic-content">
                         <h2>Analysis #1 - Frequency of Gendered Pronouns</h2>
                             <p>
                                 Code from gender_pronoun_freq_analysis.py was used to determine the average proportion of
@@ -33,58 +41,83 @@
                                 corpus. Then, results were binned by author gender, date published, and location of
                                 publication.
                             </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="topic-content">
+                            <h4>Overall</h4>
+                                <p>
+                                    Frequency of gendered pronouns:
+                                </p>
+                                    <ul>
+                                        <li>Female pronouns: 0.325</li>
+                                        <li>Male pronouns: 0.675</li>
+                                    </ul>
+                                <svg width="300" height="200" id="svg_0"> </svg>
+                                <p>
+                                    On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns.
+                                    This result has not been tested for statistical significance.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="topic-content">
+                            <h4>By Publication Location</h4>
+                                <ul>
+                                    <li>United Kingdom: 0.33</li>
+                                    <li>United States: 0.34</li>
+                                    <li>Other: 0.33</li>
+                                </ul>
+                                <p>
+                                    No patterns or significant difference was found between categories for publication date or
+                                    publication location.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col">
+                        <div class="topic-content">
+                            <h4>By Author Gender</h4>
+                                <p>
+                                    Frequency of gendered pronouns:
+                                </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Male author: 0.25</p>
+                                    <svg width="300" height="200" id="svg_1"> </svg>
+                                </div>
 
-                                <h4>Overall</h4>
-                                    <p>
-                                        Frequency of gendered pronouns:
-                                    </p>
-                                        <ul>
-                                            <li>Female pronouns: 0.325</li>
-                                            <li>Male pronouns: 0.675</li>
-                                        </ul>
-                                    <svg width="300" height="200" id="svg_0"> </svg>
-                                    <p>
-                                        On average, a novel in the corpus contains 33.2% female pronouns and 66.8% male pronouns.
-                                        This result has not been tested for statistical significance.
-                                    </p>
-
-                                <h4>By Author Gender</h4>
-                                    <p>
-                                        Frequency of gendered pronouns:
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p>Male author: 0.25</p>
-                                            <svg width="300" height="200" id="svg_1"> </svg>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p>Female author: 0.53</p>
-                                            <svg width="300" height="200" id="svg_2"> </svg>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel
-                                        by a female author contains 52.8% female pronouns. This difference has been shown to be
-                                        statistically significant at the p = 0.05 level by an independent t test.
-                                    </p>
-
+                                <div class="col-md-6">
+                                    <p>Female author: 0.53</p>
+                                    <svg width="300" height="200" id="svg_2"> </svg>
+                                </div>
+                            </div>
+                                <p>
+                                    On average, a novel by a male author in the corpus contains 24.6% female pronouns and a novel
+                                    by a female author contains 52.8% female pronouns. This difference has been shown to be
+                                    statistically significant at the p = 0.05 level by an independent t test.
+                                </p>
+                        </div>
+                    </div>
+{#                </div>#}
+            </div>
+{#        </div>#}
+        <div class="row">
+                    <div class="col">
+                        <div class="topic-content">
                                 <h4>By Date</h4>
 
                                 <div>
                                     <svg width="1000" height="500" id = "svg_8"></svg>
                                 </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
 
-                                <h4>By Publication Location</h4>
-                                    <ul>
-                                        <li>United Kingdom: 0.33</li>
-                                        <li>United States: 0.34</li>
-                                        <li>Other: 0.33</li>
-                                    </ul>
-                                    <p>
-                                        No patterns or significant difference was found between categories for publication date or
-                                        publication location.
-                                    </p>
 
                         <h2>Analysis #2 - Frequency of Gendered Subject Pronouns</h2>
                             <p>
@@ -280,7 +313,7 @@
                             </p>
                 </div>
             </div>
-        </div>
+{#        </div>#}
     </div>
     <script>
         makePieChart([{name: 'Female', val: 32.5, color: '#BDE894'},
