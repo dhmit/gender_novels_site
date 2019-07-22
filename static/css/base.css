@@ -7,8 +7,41 @@ h1, h2, h3 {
     text-align: center;
 }
 
+h4{
+    text-align: center;
+}
+
+h2, p {
+    border-width: 100px;
+    border-color: #ffffff;
+}
+
+div.topic-content, div.image, div.links {
+    /*text-align: center;*/
+    background-color: #ffffff;
+}
+
+div.col {
+    padding: 10px, 10px, 10px, 10px;
+}
+
+div.column_1 {
+    float: left;
+}
+
+div.column_2 {
+    float: right;
+}
+
+div.row-2 {
+    padding: 10px, 0px, 0px, 0px;
+    background-color: #FCF5E9;
+    color: #FCF5E9;
+}
 div {
     font-family: "Sorts Mill Goudy";
+    padding: 5px;
+
 }
 
 div.main {
@@ -37,8 +70,14 @@ span {
 /* Custom classes */
 
 .header {
-    background-color: #99BC78;
+    /*background-color: #99BC78;*/
+    /*padding: 60px;*/
+  text-align: center;
+  /*background: #1abc9c;*/
+  /*color: white;*/
+  font-size: 1000px;
 }
+
 
 .header-text {
     color: black;
@@ -59,16 +98,19 @@ span {
 /* Navbar */
 
 .header-nav {
-    background-color: #FCF5E9;
-    margin-bottom: -1rem;
+    /*background-color: #99BC78;*/
+    background-color: #34282C;
+    margin-bottom: 3rem;
 }
 
 .nav-link {
-    color: black !important;
+    color: white !important;
+    font-size: x-large;
 }
 
 a:hover {
     color: #99BC78 !important;
+    /*color: #FCF5E9 !important;*/
 }
 
 /* Topic content */
