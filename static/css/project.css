@@ -1,0 +1,102 @@
+.header__logo {
+  display: flex;
+}
+
+.header__svg {
+  width: 10em;
+  margin-right: 1em;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.4em;
+  padding-top: 1em;
+}
+
+p {
+  max-width: 740px;
+  line-height: 1.6em;
+  font-size: 20px;
+}
+
+.toggle-description-button {
+	color: #3f5262;
+	font-weight: 700;
+	padding-top: 1em;
+  font-size: 20px;
+}
+
+.toggle-description-button:hover {
+	color: #2e3b46;
+}
+
+.toggle-description-button:focus {
+	outline: none
+}
+
+.long-description {
+  display: none;
+}
+
+.nav__link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.project-slider {
+  white-space: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: none;
+  padding: 30px 0;
+  flex-wrap: nowrap;
+}
+
+.project-slider li:first-child {
+  margin-left: 8rem;
+}
+
+#our_goals {
+  padding-bottom: 20em;
+  position: relative;
+  overflow:hidden;
+  width: 100vw;
+}
+
+.goals-image {
+  width: 44%;
+  position: absolute;
+  right: -5em;
+  top: 12em;
+}
+
+.goals-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+#team {
+  padding-bottom: 6em;
+}
+
+.team-member {
+  width: 12em;
+  margin: 1em 1em 1em 0;
+}
+
+.team-list {
+  padding: 1em 8rem;
+}
+
+@media(min-width:1050px) {
+	.l\:f60 {
+		font-size: 6rem
+	}
+  .nav__column {
+    width: 14rem;
+  }
+}

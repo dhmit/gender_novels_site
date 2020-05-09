@@ -17,7 +17,12 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def render_overview():
-    return render_markdown_any('gender_novels_overview', title='Gender in Novels, 1770–1922')
+    file_path = os.path.join('static', 'markdowns', f'gender_novels_overview.md')
+    with open(file_path, encoding='utf-8') as fh:
+        md_in = fh.read()
+    md_in = md_in.replace('(images/', '(/static/markdowns/images/')
+    markdown_html = markdown2.markdown(md_in)
+    return render_template('gender_novels_overview.html', title='Gender in Novels, 1770–1922', markdown_html=markdown_html)
 
 
 @app.route('/info/team.html')
