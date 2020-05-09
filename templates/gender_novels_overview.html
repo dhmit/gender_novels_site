@@ -3,76 +3,540 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-    <!-- Page content -->
-{#    <div class="header">#}
-{#        <h1> The Gender Novels Project </h1>#}
-{#    </div>#}
-<div class = "page-header">
-   <h1>
-      The Gender Novels Project
-   </h1>
-</div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="topic-content">
-                <h2>Computational Reading of Gender in Novels, 1770-1922</h2>
-                    <p>
-                        The first project of the MIT Digital Humanities Lab analyzed the description of gender
-                        and gender roles across a large repertory of novels in the English language, primarily
-                        from the nineteenth century and early twentieth century. Our goal was to build
-                        computational tools that helped us understand how conceptions of gender were expressed
-                        and changed through distant reading of thousands of books. Our database involves over
-                        4200 novels sourced from the Gutenberg project and gives us a comprehensive look at the
-                        views of authors of the time period.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                <div class="image">
-                <p>
-                    <img src="/static/markdowns/images/gender_novels_cover_image.png" alt="" title="" />
-                </p>
-                </div>
-                </div>
-                <div class="row">
-                <div class="links">
-                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-                    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-                </a>
-                <br />This work is licensed under a
-                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="topic-content">
-                <h2>Our Goals</h2>
 
-                            <p>
-                                As the first project of the lab, we are very excited to begin our research in the field
-                                of gender studies. The use of gender has changed over the centuries, not only in our
-                                culture, but also in its role in our literature.  We are directing our research at
-                                novels written by authors as famous as Jane Austen and others that are much more
-                                obscure, such as Mary E. Mann. By looking at the history of our books, we hope to be
-                                able to study the ever-adapting and changing view on gender by writers all around the
-                                globe in the nineteenth and twentieth centuries.
-                            </p>
 
-                            <p1>
-                                It is the hope of the lab that by embarking on this mission, we are able to draw on the
-                                views and opinions of the past to diagnose potential causes, solutions, and sources of
-                                gender-based discrimination and stereotyping. We have asked questions and performed
-                                comparisons such as examining passive and active voice, pronoun frequencies, and much
-                                more.
-                            </p1>
-                </div>
-            </div>
-        </div>
+<section id="intro" class="rel ph20 m:ph40 l:ph80 pt90 s:pt150 m:pt180 pb30 m:pb30">
+  <div class="rel z1">
+    <h1 class="serif f28 s:f52 l:f60 lh1156 s:lh1138 mb20 s:mb45 max-w700 l:max-w920">Computational Reading of Gender in Novels
+      1770–1922.</h1>
+    <div class="sans f16 s:f20 l:f24 lh150 ls01em s:ls02em max-w600 l:max-w850">
+      <p class="long-description">
+        The first project of the MIT Digital Humanities Lab analyzed the description of gender and gender roles across a large repertory of novels in the English language, primarily from the nineteenth century and early twentieth century.
+        <br>
+        <br>
+        Our goal was to build computational tools that helped us understand how conceptions of gender were expressed and changed through distant reading of thousands of books. Our database involves over 4200 novels sourced from the Gutenberg project
+        and gives us a comprehensive look at the views of authors of the time period.
+      </p>
+      <p class="archive-description short-description">
+        The first project of the MIT Digital Humanities Lab analyzed the description of gender and gender roles across a large repertory of novels in the English language . . .
+        <br>
+        <button class="toggle-description-button">Read more</button>
+      </p>
     </div>
+  </div>
+</section>
+<section id="projects" class="pt25 mb30 s:mb60 m:mb80">
+  <div class="project-slider ph20 m:ph40 l:ph80 is-draggable">
+    <ul class="f0 nowrap mhn5 m:mhn10" style="transform: translate3d(0%, 0px, 0px);">
+
+      <li class="project-slider__item dib wrap ph5 m:ph10 is-selected" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="A young man voting at a voting booth" src="/static/markdowns/images/he_she_freq0.png">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Analyses
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Subject vs Object Pronoun Frequency</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Feminine and masculine subject pronouns vs object pronouns</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-slider__item dib wrap ph5 m:ph10" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/markdowns/images/acquired_metadata_pie.png">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Corpus
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Visualizations</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Describing the corpus countries of publication, date, and other features</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-slider__item dib wrap ph5 m:ph10" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="Photograph of two young girls eating lunch in a school cafeteria"
+                  src="/static/markdowns/images/dunning_scores_verbs.jpg">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Analyses
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Instance Distances</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Distinctiveness of words and the Dunning Log-Likelihood</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-slider__item dib wrap ph5 m:ph10" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="Two women operating an early computer" src="/static/markdowns/images/median_female_instance_distance_by_author_gender.png">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Analyses
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Pronoun Frequency</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Understanding 19th century novels through gendered pronouns in several methods</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-slider__item dib wrap ph5 m:ph10" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="Women sitting in a room reading books and talking" src="/static/markdowns/images/sentence_diagram.png">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Analyses
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Grammar Analysis</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Studying all the words that follow a specific keyword in a given novel</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="project-slider__item dib wrap ph5 m:ph10" style="vertical-align: top;">
+        <div class="project-slider__item__inner">
+          <a class="db pen" href="#">
+
+
+            <div class="lazy-image r--4x3 br7 oh mb10 s:mb20 is-loaded">
+
+              <div class="lazy-image__img-wrap js-imgWrap">
+                <img class="lazy-image__img js-img x y o-cover" alt="Women sitting in a room reading books and talking" src="/static/markdowns/images/acquired_metadata_pie.png">
+              </div>
+            </div>
+            <p class="mono f11 s:f14 mb5 s:mb10 m:mb5">
+              Analyses
+            </p>
+            <h3 class="serif f16 s:f21 m:f32 lh125 mb15">Grammar Analysis</h3>
+            <p class="sans f16 m:f18 lh155 ls02em dn s:db">Studying all the words that follow a specific keyword in a given novel</p>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+<section id="our_goals" class="pt25 m:pt75 ph20 m:ph40 l:ph80 pb40 l:pb140 m:pb140 mb40 s:mb60 m:mb80 c-tan bg-blue">
+  <div class="about-carousel dn m:df" data-autoplay-duration="8000" style="height: 426px;">
+    <ul class="w40 xl:w50 pt20">
+
+      <li class="mb40">
+        <button class="about-carousel__button f38 xl:f50 lh150 js-buttons" data-index="0">
+          Our Goals
+          <span class="js-lines" style="transform: translate(0px, 0px); transform-origin: 0% 50%;"></span>
+        </button>
+      </li>
+      <li class="about-carousel__content o0 js-slides" style="opacity: 1; visibility: inherit; transform: translate(0px, 0px);">
+        <h3 class="serif f38 xl:f50 lh120 mb30">As the first project of the lab,</h3>
+        <div class="f16 l:f18 lh155 ls01em l:ls02em">
+          <p>
+            we are very excited to begin our research in the field of gender studies. The use of gender has changed over the centuries, not only in our culture, but also in its role in our literature. We are directing our research at novels written
+            by authors as famous as Jane Austen and others that are much more obscure, such as Mary E. Mann. By looking at the history of our books, we hope to be able to study the ever-adapting and changing view on gender by writers all around the
+            globe in the nineteenth and twentieth centuries.
+          </p>
+          <br>
+          <p>
+            It is the hope of the lab that by embarking on this mission, we are able to draw on the views and opinions of the past to diagnose potential causes, solutions, and sources of gender-based discrimination and stereotyping. We have asked
+            questions and performed comparisons such as examining passive and active voice, pronoun frequencies, and much more.
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div class="goals-image">
+      <img src="/static/markdowns/images/john-towner-126924-unsplash.jpg" />
+    </div>
+  </div>
+</section>
+
+<section id="team" class="pt25">
+  <div class="m:df ph20 m:ph40 l:ph80">
+    <div class="m:w60 xl:w50 m:pr25 mb35 m:mb0">
+      <h3 class="serif f27 m:f38 xl:f50 lh120 mb20 m:mb30">Team</h3>
+      <div class="f16 l:f18 lh155 ls01em l:ls02em mb45">
+        <div>
+          <p>Specific groups and roles were assigned in order to
+            gain specialized knowledge that the team will need.
+            Nonetheless, all members in any role across all groups were
+            responsible for the success of the project. All members were
+            expected to contribute code, prose, and knowledge
+            (technical, humanistic, and hybrid) to the project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-list">
+    <h3 class="f38 xl:f50 lh150 ">Data</h3>
+    <p>
+      Created tools for acquiring and creating corpora (collections) of novels. Ensures the quality of data and their quantity. Prepares metadata. Develops Object-Oriented Models for Corpus and Novel classes. Analyzes trends across large data
+      collections.
+    </p>
+
+    <ul class="f16 lh1625 ls01em mhn5 df fw">
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Ademolu-Odeneye_Ife_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Ife Ademolu-Odeneye<br>Web Acquisition Specialist
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Atia_Dina_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Dina Atia<br>HathiTrust Specialist
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Chen_Susanna_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Susanna Chen<br>Corpus Scout
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Gallegos_Maritza_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Maritza Gallegos<br>Data Sanitization Engineer
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Murray_Keith_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Keith Murray<br>Gutenberg Specialist
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Tran_Felix_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Felix Tran<br>Visualization Specialist
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="static/graphics/portraits/Yen_Derek_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Derek Yen<br>Copyright and License
+        </p>
+      </li>
+
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Zhi_Sophia_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Sophia Zhi<br>Statistics Specialist
+        </p>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="team-list">
+    <h3 class="f38 xl:f50 lh150 ">Analysis</h3>
+    <p>
+      Created tools for low-level analysis of individual novels,
+      sections, sentences, and words. Read
+      the literature of relevant humanities fields
+      in order to ask interesting and appropriate questions
+      and work at high levels of intellectual sophistication.
+    </p>
+
+    <ul class="f16 lh1625 ls01em mhn5 df fw">
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Caragay_Emily_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Emily Caragay<br>Gender Studies Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/DaCosta_Howard_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Howard DaCosta<br>Statistics Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Duan_Mingfei_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Mingfei Duan<br>Metadata Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Ismoldayeva_Assel_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Assel Ismoldayeva<br>Grammar Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Li_Michelle_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Michelle Li<br>Regular Expressions Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Merrill_Kelsey_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Kelsey Merrill<br>History/Chronology Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Minsky_Charlotte_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Charlotte Minsky<br>Analysis Project Manager
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Pan_Carol_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Carol Pan<br>Visualization Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Sundaram_Shobhita_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Shobita Sundaram<br>Digital Humanities Literature Specialist
+        </p>
+      </li>
+
+    </ul>
+
+  </div>
+  <div class="team-list">
+    <h3 class="f38 xl:f50 lh150 ">Deployment</h3>
+    <p>
+
+      Ensured that knowledge from the group was disseminated
+      publicly by developing web interfaces, high-reliability code,
+      effective and beautiful visualizations,
+      and clear and interesting prose.
+    </p>
+
+    <ul class="f16 lh1625 ls01em mhn5 df fw">
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Boal_Alena_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Elena Boal<br>Quality Assurance Engineer
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Culbertson_Alena_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Alena Culbertson<br>Visualization Specialist
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Itambo_Elsa_square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Elsa Itambo<br>DevOps Engineer
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Redlon_Isaac_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Isaac Redlon<br>Front End Web Developer
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Xu_Katherine_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Kate Xu<br>Back End Web Developer
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/York_Samantha_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Samanatha York<br>Writer/Editor
+        </p>
+      </li>
+    </ul>
+
+  </div>
+  <div class="team-list">
+    <h3 class="f38 xl:f50 lh150 ">Administration</h3>
+
+    <ul class="f16 lh1625 ls01em mhn5 df fw">
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Cuthbert_Michael_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Michael Scott Cuthbert<br>Faculty Director of the Digital Humanities Lab and Associate Professor of Music
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Fountain_Nicole_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Nicole Fountain<br>Administrative Assistant
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Johnston_Bridget_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Bridget Johnson<br>Temporary Administrative Assistant
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Risi_Stephan_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Stephan Risi<br>Postdoctoral Associate
+        </p>
+      </li>
+      <li class="team-member ph5 mb10">
+        <div class="lazy-image r--1x1 br4 oh mb10 is-loaded">
+          <div class="lazy-image__img-wrap js-imgWrap">
+            <img class="lazy-image__img js-img x y o-cover" alt="" src="/static/graphics/portraits/Tagliaferri_Lisa_Square.jpg">
+          </div>
+        </div>
+        <p class="sans f14 ls01em lh125">
+          Lisa Tagliaferri<br>Postdoctoral Associate
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
 
 
 {% endblock %}

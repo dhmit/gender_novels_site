@@ -1,170 +1,284 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- DH Lab modules -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dhlab.css') }}" />
-
-    <!-- Bootstrap modules -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    {% block extra_header %}
-    {% endblock extra_header %}
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <!-- Social sharing -->
-    <meta property="og:image" content="http://gendernovels.digitalhumanitiesmit.org/static/graphics/gender_novels.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Gender Novels" />
-    <meta property="og:description" content="Computational Reading of Gender in Novels, 1770–1922" />
+  <!-- DH Lab modules -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dhlab.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}" />
 
-    <title>{% block title %}{% endblock title %}</title>
+  <!-- Bootstrap modules -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  {% block extra_header %}
+  {% endblock extra_header %}
+
+
+  <!-- Social sharing -->
+  <meta property="og:image" content="http://gendernovels.digitalhumanitiesmit.org/static/graphics/gender_novels.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gender Novels" />
+  <meta property="og:description" content="Computational Reading of Gender in Novels, 1770–1922" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',
+    filename='apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',
+    filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',
+    filename='favicon-16x16.png') }}">
+  <meta name="msapplication-TileColor" content="#528486">
+  <meta name="theme-color" content="#fbf7eb">
+
+  <title>{% block title %}{% endblock title %} | Digital Humanities Lab at MIT</title>
+
+
+
+
+  <link rel="preload" href="{{ url_for('static', filename='fonts/Cambon-Demi.woff2') }}" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="{{ url_for('static', filename='fonts/Lausanne-300.woff2') }}" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="{{ url_for('static', filename='fonts/Lausanne-300Italic.woff2') }}" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="{{ url_for('static', filename='fonts/MessinaSansMonoWeb-Regular.woff2') }}" as="font" type="font/woff2" crossorigin="">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.1.45/css/materialdesignicons.min.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-129345000-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129345000-6');
+  </script>
 
 </head>
 
-<body>
-    <!-- Header -->
-{#    <div class="container-fluid header">#}
-{#        <div class="row justify-content-center align-items-center">#}
-{#            <div class="col">#}
-{#                <h1 class="header-text display-2">The Gender Novels Project</h1>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+<body class="bg-tan c-blue sans f18 fix fill oh">
+  <a class="skip-link fix top left bg-teal c-tan f18 ls02em z10 p5" href="#intro" data-router-disabled="">Skip to content ↓</a>
 
-    <!-- Navbar -->
-    <div class="container-fluid header-nav">
-         <nav class="navbar fixed-top navbar-expand-sm navbar-light" style="background-color: #34282C">
-             <button class="navbar-toggler" type="button" data-toggle="collapse"
-                     data-target="#navbarNav" aria-controls="navbarNav"
-                     aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-{#             <a class="navbar-brand" href="#">#}
-{#                 GENDER NOVELS#}
-{#             </a>#}
-            <nav class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/info/gender_novels_overview">GENDER NOVELS</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Analyses
+
+  <div id="root">
+    <main data-router-wrapper="">
+
+
+
+
+
+
+
+
+
+
+      <div class="landing abs fill oy z1" data-router-view="home" data-transition-in="default">
+        <div>
+          <header class="header fix top fill-x bg-tan bb z2">
+            <div class="header__inner df aic jcb ph10 xs:ph20 pv10">
+              <a class="header__logo db is-active" href="/" aria-label="MIT Programs in Digital Humanities" data-router-disabled="">
+                <svg class="db header__svg" viewBox="0 0 124 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 58.4473C0 58.894 0.364551 59.2562 0.814248 59.2562H20.1057C20.5554 59.2562 20.92 58.894 20.92 58.4473V1.82356C20.92 1.37681 20.5554 1.01465 20.1057 1.01465H0.814248C0.364552 1.01465 0 1.37681 0 1.82356V58.4473Z"
+                    fill="#3D5262"></path>
+                  <path d="M52.9973 14.1218C52.9973 21.8094 46.7532 28.0415 39.0506 28.0415C31.3481 28.0415 25.104 21.8094 25.104 14.1218C25.104 6.43419 31.3481 0.202148 39.0506 0.202148C46.7532 0.202148 52.9973 6.43419 52.9973 14.1218Z"
+                    fill="#3D5262"></path>
+                  <path d="M52.9973 45.8786C52.9973 53.5662 46.7532 59.7983 39.0506 59.7983C31.3481 59.7983 25.104 53.5662 25.104 45.8786C25.104 38.191 31.3481 31.959 39.0506 31.959C46.7532 31.959 52.9973 38.191 52.9973 45.8786Z" fill="#3D5262">
+                  </path>
+                  <path d="M90.6531 14.1218C90.6531 21.8094 84.4089 28.0415 76.7064 28.0415C69.0039 28.0415 62.7598 21.8094 62.7598 14.1218C62.7598 6.43419 69.0039 0.202148 76.7064 0.202148C84.4089 0.202148 90.6531 6.43419 90.6531 14.1218Z"
+                    fill="#3D5262"></path>
+                  <path d="M90.5827 45.8786C90.5827 53.5662 84.3386 59.7983 76.6361 59.7983C68.9336 59.7983 62.6895 53.5662 62.6895 45.8786C62.6895 38.191 68.9336 31.959 76.6361 31.959C84.3386 31.959 90.5827 38.191 90.5827 45.8786Z" fill="#3D5262">
+                  </path>
+                  <path d="M122.731 14.1218C122.731 21.8094 116.487 28.0415 108.784 28.0415C101.082 28.0415 94.8374 21.8094 94.8374 14.1218C94.8374 6.43419 101.082 0.202148 108.784 0.202148C116.487 0.202148 122.731 6.43419 122.731 14.1218Z"
+                    fill="#3D5262"></path>
+                  <path d="M122.889 45.8786C122.889 53.5662 116.645 59.7983 108.942 59.7983C101.24 59.7983 94.9956 53.5662 94.9956 45.8786C94.9956 38.191 101.24 31.959 108.942 31.959C116.645 31.959 122.889 38.191 122.889 45.8786Z" fill="#3D5262">
+                  </path>
+                </svg>
+                <span class="project-title">
+                  Gender in Novels, 1770-1922
+                </span>
+              </a>
+              <div class="df aic">
+                <div class="df aic m:dn pr10 xs:pr15 z2">
+                  <button class="burger df aic" aria-label="Open Navigation">
+                    <span class="burger__label mono c-tan f14 mr10" aria-hidden="true">Close</span>
+                    <span class="burger__icon df fc jcb ba br3">
+                      <span class="rel"></span>
+                      <span class="rel"></span>
+                      <span class="rel"></span>
+                    </span>
+                  </button>
+                </div>
+                <div class="z1">
+                  <div class="mobile-nav fix fill bg-blue">
+                    <nav class="ph25 pt80 rel z1">
+                      <ul class="mobile-nav__items">
+                        <li class="mobile-nav__item mb25">
+                          <a class="c-tan f38 lh100 ls02em" href="#" data-router-disabled="">Analyses</a>
+                        </li>
+                        <li class="mobile-nav__item mb25">
+                          <a class="c-tan f38 lh100 ls02em" href="#" data-router-disabled="">Corpus</a>
+                        </li>
+                        <li class="mobile-nav__item mb25">
+                          <a class="c-tan f38 lh100 ls02em" href="#" data-router-disabled="">Development</a>
+                        </li>
+                        <li class="mobile-nav__item mb25">
+                          <a class="c-tan f38 lh100 ls02em" href="#team" data-router-disabled="">Team</a>
+                        </li>
+                        <li class="mobile-nav__item mb25">
+                          <a class="c-tan f38 lh100 ls02em" href="https://digitalhumanities.mit.edu/" data-router-disabled="">dh_lab</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="abs bottom fill-x">
+                      <svg class="db" viewBox="0 0 375 263">
+                        <path d="M286.512 69.603C286.512 108.044 255.619 139.206 217.51 139.206C179.401 139.206 148.508 108.044 148.508 69.603C148.508 31.1623 179.401 0 217.51 0C255.619 0 286.512 31.1623 286.512 69.603Z" fill="#BC8540"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M0 131.699C9.37108 136.5 19.9747 139.206 31.205 139.206C69.3137 139.206 100.207 108.044 100.207 69.603C100.207 31.1623 69.3137 0 31.205 0C19.9747 0 9.37108 2.70621 0 7.50739V131.699Z" fill="#528486"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 263H91.089C96.8899 252.807 100.207 240.993 100.207 228.397C100.207 189.956 69.3137 158.794 31.205 158.794C19.9747 158.794 9.37108 161.5 0 166.301V263Z" fill="#BC8540"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M277.045 263C282.846 252.807 286.163 240.993 286.163 228.397C286.163 189.956 255.27 158.794 217.161 158.794C179.053 158.794 148.16 189.956 148.16 228.397C148.16 240.993 151.477 252.807 157.278 263H277.045Z"
+                          fill="#528486"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M375 158.823V263H317.114C311.313 252.807 307.996 240.993 307.996 228.397C307.996 190.631 337.815 159.889 375 158.823Z" fill="#BC8540"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M375 0.0107422V139.196C337.452 138.542 307.213 107.635 307.213 69.6031C307.213 31.5718 337.452 0.664572 375 0.0107422Z" fill="#528486"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="dn m:db pt5">
+                  <nav class="nav df">
+                    <div class="nav__column">
+                      <div class="mb5">
+                        <a href="#" class="nav__link dib sans f16 l:f18 pv5" data-router-disabled="">
+                          <span class="rel z1">Analyses</span>
+                          &nbsp;
+                          <i class="mdi mdi-chevron-down"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item"
-                               href="/info/pronoun_adjective_analysis">
-                                <span class="dropdown-link">Adjectives</span></a>
-                            <a class="dropdown-item"
-                               href="/info/pronoun_frequency_analysis">
-                                <span class="dropdown-link">Pronoun Frequency</span></a>
-                            <a class="dropdown-item"
-                               href="/info/subject_object_pronoun_analysis">
-                                <span class="dropdown-link">Subject-Object Pronouns</span></a>
-                            <a class="dropdown-item"
-                               href="/info/instance_distance_analysis">
-                                <span class="dropdown-link">Instance Distances</span></a>
-                            <a class="dropdown-item" href="/info/grammar_analysis">
-                                <span class="dropdown-link">Grammar</span></a>
-                            <a class="dropdown-item" href="/info/statistical_analysis">
-                                <span class="dropdown-link">Statistics</span></a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Corpus
+                      </div>
+                      <div>
+                        <a href="#" class="nav__link dib sans f16 l:f18 pv5" data-router-disabled="">
+                          <span class="rel z1">Corpus</span>
+                          &nbsp;
+                          <i class="mdi mdi-chevron-down"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/info/corpus_visualizations"><span
-                                    class="dropdown-link">Visualizations</span></a>
-                            <a class="dropdown-item" href="/info/corpus_metadata"><span
-                                    class="dropdown-link">Metadata</span></a>
-                            <a class="dropdown-item" href="/info/copyright"><span
-                                    class="dropdown-link">Copyright</span></a>
-                            <a class="dropdown-item" href="/info/corpus_notes"><span
-                                    class="dropdown-link">Notes</span></a>
-                            <a class="dropdown-item" href="/info/install_gutenberg"><span
-                                    class="dropdown-link">Install Gutenberg</span></a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Development
+                      </div>
+                    </div>
+                    <div class="nav__column">
+                      <div class="mb5">
+                        <a href="#" class="nav__link dib sans f16 l:f18 pv5" data-router-disabled="">
+                          <span class="rel z1">Development</span>
+                          &nbsp;
+                          <i class="mdi mdi-chevron-down"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/info/natural_language_processing"><span
-                                    class="dropdown-link">Natural Language Processing</span></a>
-                            <a class="dropdown-item" href="/info/dunning_analysis"><span
-                                    class="dropdown-link">Dunning Analysis</span></a>
-                            <a class="dropdown-item" href="/info/web_scraping"><span
-                                    class="dropdown-link">Web
-                                Scraping</span></a>
-                            <a class="dropdown-item" href="/info/analysis_visualizations"><span
-                                    class="dropdown-link">Analysis Visualizations</span></a>
-                            <a class="dropdown-item" href="/info/deployment_visualizations"><span
-                                    class="dropdown-link">Deployment Visualizations</span></a>
-                        </div>
+                      </div>
+                      <div>
+                        <a href="#team" class="nav__link dib sans f16 l:f18 pv5" data-router-disabled="">
+                          <span class="rel z1">Team</span>
+                        </a>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+                <div class="pv10 pl10 xs:pl15 m:pl20 bl">
+                  <a class="header__mit db" href="https://mit.edu" target="_blank" rel="noopener noreferrer" aria-label="MIT">
+                    <svg class="db" viewBox="0 0 73 39" version="1.1">
+                      <polygon points="52.785 8.063 72.785 8.063 72.785 0.063 52.785 0.063" fill="#3D5262"></polygon>
+                      <polygon points="13.785 26.063 21.785 26.063 21.785 0.063 13.785 0.063" fill="#3D5262"></polygon>
+                      <polygon points="26.785 38.063 34.785 38.063 34.785 0.063 26.785 0.063" fill="#3D5262"></polygon>
+                      <polygon points="0.785 38.063 8.785 38.063 8.785 0.063 0.785 0.063" fill="#3D5262"></polygon>
+                      <polygon points="52.785 38.063 60.785 38.063 60.785 13.063 52.785 13.063" fill="#3D5262"></polygon>
+                      <polygon points="39.785 8.063 47.785 8.063 47.785 0.063 39.785 0.063" fill="#3D5262"></polygon>
+                      <polygon points="40 38 48 38 48 13 40 13" fill="#528486"></polygon>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <main>
+            <!-- Unique page content -->
+            {% block content %}{% endblock content %}
+          </main>
+
+          <footer class="footer bg-blue c-tan ph20 m:ph40 l:ph80 pt30 pb70">
+            <div class="df aic jcb">
+              <a class="footer__logo is-active" href="#intro" data-router-disabled="" aria-label="MIT Programs in Digital Humanities">
+                <svg class="db" viewBox="0 0 123 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 57.663C0 58.1052 0.364551 58.4638 0.814248 58.4638H20.1057C20.5554 58.4638 20.92 58.1052 20.92 57.663V1.60551C20.92 1.16323 20.5554 0.804688 20.1057 0.804688H0.814248C0.364552 0.804688 0 1.16323 0 1.60551V57.663Z"
+                    fill="#FBF7EB"></path>
+                  <path d="M52.8933 13.7805C52.8933 21.3912 46.6492 27.5609 38.9466 27.5609C31.2441 27.5609 25 21.3912 25 13.7805C25 6.16972 31.2441 0 38.9466 0C46.6492 0 52.8933 6.16972 52.8933 13.7805Z" fill="#FBF7EB"></path>
+                  <path d="M52.8933 45.7805C52.8933 53.3912 46.6492 59.5609 38.9466 59.5609C31.2441 59.5609 25 53.3912 25 45.7805C25 38.1697 31.2441 32 38.9466 32C46.6492 32 52.8933 38.1697 52.8933 45.7805Z" fill="#FBF7EB"></path>
+                  <path d="M87.8933 13.7805C87.8933 21.3912 81.6492 27.5609 73.9466 27.5609C66.2441 27.5609 60 21.3912 60 13.7805C60 6.16972 66.2441 0 73.9466 0C81.6492 0 87.8933 6.16972 87.8933 13.7805Z" fill="#FBF7EB"></path>
+                  <path d="M87.8933 45.7805C87.8933 53.3912 81.6492 59.5609 73.9466 59.5609C66.2441 59.5609 60 53.3912 60 45.7805C60 38.1697 66.2441 32 73.9466 32C81.6492 32 87.8933 38.1697 87.8933 45.7805Z" fill="#FBF7EB"></path>
+                  <path d="M122.731 13.7805C122.731 21.3912 116.487 27.5609 108.784 27.5609C101.082 27.5609 94.8374 21.3912 94.8374 13.7805C94.8374 6.16972 101.082 0 108.784 0C116.487 0 122.731 6.16972 122.731 13.7805Z" fill="#FBF7EB"></path>
+                  <path d="M122.889 45.2194C122.889 52.8302 116.645 58.9999 108.942 58.9999C101.24 58.9999 94.9956 52.8302 94.9956 45.2194C94.9956 37.6087 101.24 31.439 108.942 31.439C116.645 31.439 122.889 37.6087 122.889 45.2194Z" fill="#FBF7EB">
+                  </path>
+                </svg>
+
+              </a>
+              <a class="footer__mit" href="https://mit.edu" target="_blank" rel="noopener noreferrer" aria-label="MIT">
+                <svg class="db" viewBox="0 0 73 39" version="1.1">
+                  <polygon points="52.785 8.063 72.785 8.063 72.785 0.063 52.785 0.063" fill="#FBF7EB"></polygon>
+                  <polygon points="13.785 26.063 21.785 26.063 21.785 0.063 13.785 0.063" fill="#FBF7EB"></polygon>
+                  <polygon points="26.785 38.063 34.785 38.063 34.785 0.063 26.785 0.063" fill="#FBF7EB"></polygon>
+                  <polygon points="0.785 38.063 8.785 38.063 8.785 0.063 0.785 0.063" fill="#FBF7EB"></polygon>
+                  <polygon points="52.785 38.063 60.785 38.063 60.785 13.063 52.785 13.063" fill="#FBF7EB"></polygon>
+                  <polygon points="39.785 8.063 47.785 8.063 47.785 0.063 39.785 0.063" fill="#FBF7EB"></polygon>
+                  <polygon points="40 38 48 38 48 13 40 13" fill="#BC8540"></polygon>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__content df">
+              <div class="w40 xl:w50 dn l:db"></div>
+              <div class="x l:w60 xl:w50 pt105 l:pt0 f16 lh1437 ls02em pt10">
+                <div class="x">
+                  <p>Massachusetts Institute of Technology</p>
+                  <p class="db s:dib">77 Massachusetts Ave, 16-635</p><span class="dn s:di">,</span>
+                  <p class="db s:dib mb20">Cambridge, MA, USA</p>
+                  <ul class="pb100 mb20 bb bc-tan m:mr160">
+                    <li class="mr40 mb25 db s:dib">
+                      <p>+1 (617) 324-0102</p>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/info/team.html">Our Team</a>
+                    <li class="mr40 dib">
+                      <a class="tdu" href="mailto:">Email</a>
                     </li>
-                </ul>
-            </nav>
-        </nav>
-    </div>
-
-
-    <!-- Unique page content -->
-    <div class="main">
-        <br>
-        {% block content %}{% endblock content %}
-    </div>
-
-    <!-- Footer -->
-    <div class="container-fluid footer">
-        <div class="row">
-            <div class="col-2 align-self-center">
-                <a href="http://www.mit.edu/">
-                <img src="{{ url_for('static',
-                filename='graphics/MIT-logo-white-white-72x38.svg') }}" alt="MIT Homepage"
-                         class="img-fluid mx-auto d-block mit-logo"></a>
+                    <li class="dib">
+                      <a class="tdu" href="https://twitter.com/DigitalHumMIT" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </li>
+                  </ul>
+                  <div class="footer__funded-by">
+                    <div>
+                      <p>Generously funded by</p>
+                      <p><a href="https://www.mellon.org/" target="_blank" rel="noopener noreferrer">The Andrew W. Mellon Foundation</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-2 align-self-center">
-                <a href="https://digitalhumanities.mit.edu/">
-                <img src="{{ url_for('static', filename='graphics/Dots alone White Transparent.png')
-                        }}" alt="Digital Humanities Homepage"
-                         class="img-fluid mx-auto d-block">
-                </a>
-            </div>
-            <div class="col"></div>
-            <div class="col-2 align-self-center">
-                <a href="http://mellon.org">
-                <img src="{{ url_for('static', filename='graphics/Mellon_Transparent_LoRes.png') }}"
-                     alt="Mellon Foundation"
-                         class="img-fluid mx-auto d-block"></a>
-            </div>
-            <div class="col-2"></div>
-            <div class="col-2 align-self-center" align="right">
-                <p class="github-text align-self-center">
-                    Visit our GitHub to view and download the code we used for this project
-                </p>
-            </div>
-            <div class="col-1 align-self-center" align="right">
-                <a href="https://github.com/dhmit/gender_novels" target="_blank">
-                    <img src="{{ url_for('static', filename='graphics/GitHub_light.png') }}"
-                         class="github-logo">
-                </a>
-            </div>
+          </footer>
         </div>
-    </div>
-</body>
+      </div>
+    </main>
+  </div>
 
-</html>
+  <div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&amp;features=Object.assign%2CPromise%2Cfetch%2CElement.prototype.remove"></script>
+  <script src="{{ url_for('static', filename='js/dhlab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/project.js') }}"></script>
+</body>
